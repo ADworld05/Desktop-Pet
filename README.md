@@ -12,7 +12,7 @@ It combines an animated desktop pet, mouse interactions, local AI chat, persiste
 
 Created and maintained by **Abir Dutta** ([ADworld05](https://github.com/ADworld05)). Original project code is MIT licensed; the fox model and other dependencies retain their own licenses.
 
-> **Status:** the current build is an unsigned Windows x64 release candidate, `1.0.0-rc.5`. Public release assets and source publication are being prepared. Check [Releases](https://github.com/ADworld05/Desktop-Pet/releases) for availability; a downloadable package may not yet be published. The source build pipeline still needs portability work—see [BUILDING.md](BUILDING.md).
+> **Status:** the current build is an unsigned Windows x64 release candidate, `1.0.0-rc.5`. Public release assets and source publication are being prepared. Check [Releases](https://github.com/ADworld05/Desktop-Pet/releases) for availability; a downloadable package may not yet be published. A tested portable-source build command is provided; the installer pipeline still needs portability work—see [BUILDING.md](BUILDING.md).
 
 ## Contents
 
@@ -260,7 +260,7 @@ Desktop-Pet/
 ├── Source/
 │   ├── Godot/           # Scenes, scripts and runtime_assets
 │   ├── Native/          # Windows bridges and helper source
-│   ├── Blender/         # Asset-authoring scripts
+│   ├── Blender/         # Asset editing notes
 │   └── Windows/         # Windows support material
 ├── Installer/Source/    # Installer UI and installation core
 ├── docs/images/         # Public application previews
@@ -278,7 +278,7 @@ This describes the prepared source package, not a promise that all source files 
 
 End users should use release packages. Developers need **Godot 4.7.2 Standard and matching Windows export templates**, a Windows C/MinGW toolchain and required project assets. Blender **4.5.9 LTS** is relevant for asset-authoring changes, not running the pet. Existing packaging utilities also use Python.
 
-**A fresh-clone build is not yet turnkey.** Native toolchain/export paths and packaging inputs need portability work. See [BUILDING.md](BUILDING.md); no unverified one-command build is promised.
+The portable application has a tested build entry point using existing Godot/MinGW tools. Run `python scripts/check_source.py`, then follow [BUILDING.md](BUILDING.md). A portable installer build pipeline and automated CI are still pending; no complete one-command installer build is promised.
 
 Contributions are welcome for portable builds/CI, compatibility testing, accessibility, documentation and measured performance improvements. Report Windows/app/model/runtime versions and reproduction steps. Redact chats, private paths and memory; never upload credentials or signing keys.
 

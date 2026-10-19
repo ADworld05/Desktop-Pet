@@ -1,0 +1,1225 @@
+{
+  "scope": "Reviewed source inputs; excludes generated binaries/cache/user data",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 182,
+      "sha256": "d60338d144e7b56308dbe3121e58ed0bd110891233ed203850560e16537daf1e"
+    },
+    {
+      "path": "AUTHORS.md",
+      "bytes": 465,
+      "sha256": "02f096bb7fe200f9019286076cf7afcf5deeebbfc568e955ca428adcba81fb0a"
+    },
+    {
+      "path": "BUILDING.md",
+      "bytes": 3710,
+      "sha256": "a696117d18edc4c6aaa26cc249e72f0fc83ecf7f3277e11add067d0c9a84ccca"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 1081,
+      "sha256": "2da76c7e7cf4916a2fb213a3dd1070fa36c6f79904407650e41dc65b431b8eb2"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1067,
+      "sha256": "8e42806f8de81feb77c1e5858ad9daf94986893a8f578882d2048f6f0c7ae042"
+    },
+    {
+      "path": "README.md",
+      "bytes": 20735,
+      "sha256": "df0261f1e745e2163ab9ba12554046e5eb36fa3b9b318483705979db85acb489"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 763,
+      "sha256": "39161a2256788b6e80c088f39658504a8cf282446703b503282da655b5a3a729"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1368,
+      "sha256": "631af8672ec9247e4550748c3d11c1dd79beb9b956c9dd1fc183947a43489bd5"
+    },
+    {
+      "path": "Notices/Fox-Attribution.md",
+      "bytes": 3395,
+      "sha256": "e7a5c628923573904c7d12889597f3ef310c68cb7c49979880255afc990145a8"
+    },
+    {
+      "path": "Notices/GCC-GPL-3.txt",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "Notices/GCC-Runtime-Exception-3.1.txt",
+      "bytes": 3324,
+      "sha256": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74"
+    },
+    {
+      "path": "Notices/Godot-License.txt",
+      "bytes": 1169,
+      "sha256": "0cc27400b8da8c06bb35350422c14715647cd2632c138921fd49caa6610a1ef6"
+    },
+    {
+      "path": "Notices/Godot-Third-Party.txt",
+      "bytes": 109817,
+      "sha256": "712d54a519b1ff647474dc961e1d1c2b0ca50ca409e2ec9a199e574aa8039db1"
+    },
+    {
+      "path": "Notices/MinGW-w64-License.txt",
+      "bytes": 2326,
+      "sha256": "99a69660981156c21336fdb5661f89341b013c94e4bf9e1c7467b4745718397f"
+    },
+    {
+      "path": "Notices/Native-Bridge.txt",
+      "bytes": 642,
+      "sha256": "9978e877ba9f373cabc3793d765c38d594f5b98ff507a64d58930f347ebcfd50"
+    },
+    {
+      "path": "Notices/Sounds-CC0.txt",
+      "bytes": 541,
+      "sha256": "91c8127a48c60331b28845fdd33d519dc1aa0372f022e235469f85c06c04a3e5"
+    },
+    {
+      "path": "scripts/build_windows.py",
+      "bytes": 4379,
+      "sha256": "43251a898786b9d4dabb4802ee4aa88018a7b1c2192f29031bc93ef66f121f68"
+    },
+    {
+      "path": "scripts/check_source.py",
+      "bytes": 2037,
+      "sha256": "a65252957438e6fa1f7ab0e9103d359d3bea6d49a9790eb5ecd0a17821443646"
+    },
+    {
+      "path": "docs/images/compact-chat.png",
+      "bytes": 32262,
+      "sha256": "5919321b610d1e86de55bb3e0b45c212e434f22dfb9f748446fc8b4dae1f758d"
+    },
+    {
+      "path": "docs/images/desktop-fox.png",
+      "bytes": 23985,
+      "sha256": "18e027e939bb52fc6ca75b0118c977c9dc0c5041cd1fdc1e97a0421deb2ca2ce"
+    },
+    {
+      "path": "docs/images/full-chat.png",
+      "bytes": 114792,
+      "sha256": "a82c9d5a5d5460411f9bad2471c15ddaacef42c2f2b39de7dc3bf7a7908cfbdf"
+    },
+    {
+      "path": "docs/images/lying.png",
+      "bytes": 27176,
+      "sha256": "fc4573eb5577452e02ad979305ea1a001b32824c1d1c4cd6107efd6a62db042c"
+    },
+    {
+      "path": "docs/images/model-manager.png",
+      "bytes": 64353,
+      "sha256": "9c884abc0d319f97044fabc121eb5d389124b10863d34e89f731dbad7596a169"
+    },
+    {
+      "path": "docs/images/settings.png",
+      "bytes": 70338,
+      "sha256": "c09733a4d10ad3aa76b78c86ab331b45d55517f084be8827c907855ad1899f86"
+    },
+    {
+      "path": "docs/images/sleeping.png",
+      "bytes": 20774,
+      "sha256": "2ac31931b01dc92dc6b09bdc9b3f1d88147c34d4f23e6f3f6c08cf7210e7f567"
+    },
+    {
+      "path": "Installer/Source/export_presets.cfg",
+      "bytes": 716,
+      "sha256": "53390d868af24384ec27d12bd75f291891b496bb90b28b555d802237044fedc0"
+    },
+    {
+      "path": "Installer/Source/InstallCore.gd",
+      "bytes": 18192,
+      "sha256": "b7fccc805113fa831bbf1e29f45ad82d3b5479c1969ffe44ec827ed4f1c88cdc"
+    },
+    {
+      "path": "Installer/Source/InstallCore.gd.uid",
+      "bytes": 20,
+      "sha256": "0daaab96abb55b1160994d25574a4f71be1737c4651d8ee9941fb0fa28348bbc"
+    },
+    {
+      "path": "Installer/Source/project.godot",
+      "bytes": 512,
+      "sha256": "4ad7d4e2d8736eb942a6c636f223ac0992b1f31beddfdfa368010fbc5edec75d"
+    },
+    {
+      "path": "Installer/Source/Setup.gd",
+      "bytes": 11087,
+      "sha256": "b4a9dac122cf7bb29983ebf9287990dba9bd8dc9d33096482893d4b106af96c2"
+    },
+    {
+      "path": "Installer/Source/Setup.gd.uid",
+      "bytes": 20,
+      "sha256": "f47a30c4d302497c8a9e36b00dac0c90ba11ce9d2ddb751516f1dc1a48f36647"
+    },
+    {
+      "path": "Installer/Source/Setup.tscn",
+      "bytes": 251,
+      "sha256": "64f18274cd5456db6cf1bb15378d1905b0ac27118ba6c4385691c8877846f643"
+    },
+    {
+      "path": "Installer/Source/native/fox_path_boundary.gdextension",
+      "bytes": 164,
+      "sha256": "84c70bc133343ad064143bc849422e74324a2b1f6d52a4e85dc050871f5e3357"
+    },
+    {
+      "path": "Installer/Source/native/fox_path_boundary.gdextension.uid",
+      "bytes": 19,
+      "sha256": "202bcfa8e96d8eb59dffabcbcbec53e0258d5c734c37e200d8973bb9c5dee528"
+    },
+    {
+      "path": "Installer/Source/native/fox_window.gdextension",
+      "bytes": 158,
+      "sha256": "251060e0e90e4af552654ed7ec89986f0fd556a431429a02f385a6e5d59c56e3"
+    },
+    {
+      "path": "Installer/Source/native/fox_window.gdextension.uid",
+      "bytes": 20,
+      "sha256": "d5b63289f8e4c016376e7063930f0f41b6f0e50e9c00c9bc7196e1562cf8449c"
+    },
+    {
+      "path": "Source/Blender/README.md",
+      "bytes": 356,
+      "sha256": "7f413d181601d04d8e78bb98bbd8b2322e40619c97761fb4e167cc2f4c4be756"
+    },
+    {
+      "path": "Source/Godot/export_presets.cfg",
+      "bytes": 728,
+      "sha256": "94a124ea2a44b8edfcdcd6843ec0d0ba9badae0e61c7df4398e371f817dbc18d"
+    },
+    {
+      "path": "Source/Godot/project.godot",
+      "bytes": 1065,
+      "sha256": "7616ba2eadb25b9b8f3bfb9c87867b7468b857cbf5a478695fdd8666682a4e7f"
+    },
+    {
+      "path": "Source/Native/fox_chat_window.c",
+      "bytes": 7463,
+      "sha256": "b5f53c8cde3882a52d07f572046c818455a909f036af4bb73232159406f9c5b7"
+    },
+    {
+      "path": "Source/Native/fox_glass.c",
+      "bytes": 14737,
+      "sha256": "2501f4778ecc2940c5e0c72a24b3b51ec85683559a6267081d23c6bfeb7f4c79"
+    },
+    {
+      "path": "Source/Native/fox_install_shortcuts.c",
+      "bytes": 4759,
+      "sha256": "2a41c42fb1ace22d3b07655878d31b46fe6fa24758f0759e49c658b9e11f7391"
+    },
+    {
+      "path": "Source/Native/fox_notepad_trust.inc",
+      "bytes": 3603,
+      "sha256": "c1618fb8fc98b505c22148db96cb644fbb4ced09571dfd68943daf79d7ff063a"
+    },
+    {
+      "path": "Source/Native/fox_path_boundary.c",
+      "bytes": 20810,
+      "sha256": "cb94cd7995f5d86efa80368f9836596b1e2e2e5234d7e7aa21e8af93741b775a"
+    },
+    {
+      "path": "Source/Native/fox_release_launcher.c",
+      "bytes": 2018,
+      "sha256": "dbfee9e6414d6b9ecab549fab421d7782205c887d50d9664de03a4498e54ef6d"
+    },
+    {
+      "path": "Source/Native/fox_release_startup.c",
+      "bytes": 3859,
+      "sha256": "5cdb1ec50667ba2979367f300acfc1fc7d653789c7599bc2e702b4e6accf104a"
+    },
+    {
+      "path": "Source/Native/fox_scoped_actions.inc",
+      "bytes": 14626,
+      "sha256": "065994e7705824c2406fd572b57cca9be9b8a15842fb152334a7930d66ccfb80"
+    },
+    {
+      "path": "Source/Native/fox_setup_bootstrap.c",
+      "bytes": 7946,
+      "sha256": "1df7e9a5671c0780d72068b98e332602863f86499b094c48586bd06a74274ab0"
+    },
+    {
+      "path": "Source/Native/fox_setup_bootstrap.manifest",
+      "bytes": 513,
+      "sha256": "158a85342b124f2ba070f35221cf22ecfe741c2f641d25034beda808ff88ce11"
+    },
+    {
+      "path": "Source/Native/fox_setup_bootstrap.rc",
+      "bytes": 581,
+      "sha256": "b47ae15d41a7b88291a3d3afb218691759ae29a8e0293e4ee0bc79f200777eac"
+    },
+    {
+      "path": "Source/Native/fox_setup_files.h",
+      "bytes": 1978,
+      "sha256": "0644fef78e9d3d6fd2963de85c80f9f6df30aa8b1231bd2dd6ddec294d3f5aa2"
+    },
+    {
+      "path": "Source/Native/fox_setup_maintenance.h",
+      "bytes": 3819,
+      "sha256": "ec9a4cfadc263adec24f37ce63b01a573de2cf1fdfdaba037a4971d153d0187f"
+    },
+    {
+      "path": "Source/Native/fox_window.c",
+      "bytes": 20740,
+      "sha256": "efee4e031e492de4b106e0a8c5b22adf45ec01caddf82a1238423a2ebd57edf2"
+    },
+    {
+      "path": "Source/Native/fox_window_actions.inc",
+      "bytes": 6018,
+      "sha256": "a0eba6b6da706c011723bda31d7d5cb4bca29d76fcb76626e47c57bee28bdc60"
+    },
+    {
+      "path": "Source/Windows/README.md",
+      "bytes": 133,
+      "sha256": "88673e43b80a5506172a9453414fda14701056eeb0150c685c7b108fcf1cf9d6"
+    },
+    {
+      "path": "Source/Godot/native/fox_chat_window.gdextension",
+      "bytes": 175,
+      "sha256": "13dd9bc2ba319f5a025ac0e35e12d317a865119fe9c13ba147ac00d24f49d443"
+    },
+    {
+      "path": "Source/Godot/native/fox_chat_window.gdextension.uid",
+      "bytes": 20,
+      "sha256": "6bb921ac60244100c90a352a12e9596a7bab5807040c8e45fb25ca40d4ec9311"
+    },
+    {
+      "path": "Source/Godot/native/fox_glass.gdextension",
+      "bytes": 156,
+      "sha256": "bb48cac487a5187e2f819f5fc3061fdc704cdbc388c9b89c7ccc6ff45b608a4c"
+    },
+    {
+      "path": "Source/Godot/native/fox_glass.gdextension.uid",
+      "bytes": 20,
+      "sha256": "3935ffee572f494adf211bbb66c3ae8c76ded95fe82ef53a6733efdd8ca9d7f1"
+    },
+    {
+      "path": "Source/Godot/native/fox_path_boundary.gdextension",
+      "bytes": 164,
+      "sha256": "84c70bc133343ad064143bc849422e74324a2b1f6d52a4e85dc050871f5e3357"
+    },
+    {
+      "path": "Source/Godot/native/fox_path_boundary.gdextension.uid",
+      "bytes": 20,
+      "sha256": "54897ef4304cc4354cc390302a2af1eb588679c077dce2dad5fc9d4fd5ea35b9"
+    },
+    {
+      "path": "Source/Godot/native/fox_window.gdextension",
+      "bytes": 158,
+      "sha256": "251060e0e90e4af552654ed7ec89986f0fd556a431429a02f385a6e5d59c56e3"
+    },
+    {
+      "path": "Source/Godot/native/fox_window.gdextension.uid",
+      "bytes": 20,
+      "sha256": "74a306a836869a548372c2f43059ae33d5bc3e27bd9a648078aa06b2d9643d15"
+    },
+    {
+      "path": "Source/Godot/native/~fox_window.dll~RFe45994.TMP",
+      "bytes": 55262,
+      "sha256": "40fcfe8d9040e45b535872e32880d20eb20690519308c0b772e5591b18f8dd12"
+    },
+    {
+      "path": "Source/Godot/scenes/DesktopFox.tscn",
+      "bytes": 185,
+      "sha256": "e2c3007d84682f5c9532521996f80a7f506aeec9b230f13276119f5f7d3b0198"
+    },
+    {
+      "path": "Source/Godot/scenes/OverlayPrototype.tscn",
+      "bytes": 191,
+      "sha256": "4e79c387fb4f3bac97726634f6be31c1cb56bbbff730b485d3b0081d41a7692c"
+    },
+    {
+      "path": "Source/Godot/scenes/Startup.tscn",
+      "bytes": 1110,
+      "sha256": "2c49cbffab4afb7b0884ab3b030a9fe93f8c4b9c108d93402f0533e709c6c1c6"
+    },
+    {
+      "path": "Source/Godot/scripts/AppController.gd",
+      "bytes": 1127,
+      "sha256": "12f4a1d000be1c5c472ee3630bd3225a139922fcb9bed858c07a21bd07a8f143"
+    },
+    {
+      "path": "Source/Godot/scripts/AppController.gd.uid",
+      "bytes": 19,
+      "sha256": "b8a8be9b7d395e3f149e3f27be6a28478a84775692cb2ffe1f4d6501d6331b02"
+    },
+    {
+      "path": "Source/Godot/scripts/FoxFileDialogs.gd",
+      "bytes": 359,
+      "sha256": "3ec1328bc1829d13ad0fb1fadd3eb4deafb8f22034e7c1be432c64b2d4b8e7ac"
+    },
+    {
+      "path": "Source/Godot/scripts/FoxFileDialogs.gd.uid",
+      "bytes": 19,
+      "sha256": "9172953a8c4deb8cfde375bb72fe60c02421579846e2ebba23804fcb523d5972"
+    },
+    {
+      "path": "Source/Godot/scripts/Paths.gd",
+      "bytes": 2838,
+      "sha256": "4f73509652db86f4c7dd737056e6dfaa0f7433c817b1c9508fc664402e3496e2"
+    },
+    {
+      "path": "Source/Godot/scripts/Paths.gd.uid",
+      "bytes": 20,
+      "sha256": "addcbe6825832bfad516b46db2e4e445acf666d13646c5c6f08a454397671293"
+    },
+    {
+      "path": "Source/Godot/runtime_assets/Animations/animation_manifest.json",
+      "bytes": 192125,
+      "sha256": "c1de300bac99e9a4961720c91b8d4440b03c0c8849936eedfa082eff60ef1b5a"
+    },
+    {
+      "path": "Source/Godot/runtime_assets/Animations/T06_core_library_M3.tres",
+      "bytes": 5012848,
+      "sha256": "5685a9818186c843aa2930c00cf35140290b106f9f51202794b7728f385e05e7"
+    },
+    {
+      "path": "Source/Godot/runtime_assets/Animations/T07_event_library_M1.tres",
+      "bytes": 1098576,
+      "sha256": "61b94d5d773bc3807fbec444ce3d75815b2e0fa949a8a140b10046d9443dc5a7"
+    },
+    {
+      "path": "Source/Godot/runtime_assets/Animations/T07_personality_library_M1.tres",
+      "bytes": 112734,
+      "sha256": "f4eb722822b79b4d9eab917e8ba6084728977b6297ff1f13d02dcad53ec77219"
+    },
+    {
+      "path": "Source/Godot/runtime_assets/Animations/T11_rest_library_M2.tres",
+      "bytes": 3509450,
+      "sha256": "aa390d19c46c098c2fe793ce7d47c6b2617abde301c821327e33be9da3fd4d94"
+    },
+    {
+      "path": "Source/Godot/runtime_assets/Animations/T11_rest_manifest_M2.json",
+      "bytes": 6713,
+      "sha256": "916a226e8256cb0e7d7cc40372371d727108a754529605f72e4bae783dbf7dc6"
+    },
+    {
+      "path": "Source/Godot/runtime_assets/Audio/pet_chirp.wav.bin",
+      "bytes": 28268,
+      "sha256": "9ed2846284b12e61a185bc82d66ebcfd14b3bacd42d8723966648031c9130adf"
+    },
+    {
+      "path": "Source/Godot/runtime_assets/Audio/pet_result.wav.bin",
+      "bytes": 37088,
+      "sha256": "c65a976aca5f912fb7c5653a40640ce27f3c9bc129453cefee6013193f41f31f"
+    },
+    {
+      "path": "Source/Godot/runtime_assets/Audio/ui_tap.wav.bin",
+      "bytes": 8864,
+      "sha256": "6319f5b64543b3b8142fa62a24e8789428bfa86d0410d61f17c5bc52ff3a2320"
+    },
+    {
+      "path": "Source/Godot/runtime_assets/Models/fox.glb.bin",
+      "bytes": 13032136,
+      "sha256": "e959ed2eb123aa8ecade9dffe9ad1e93f58990b861aaaba35488977e9a4b6db4"
+    },
+    {
+      "path": "Source/Godot/runtime_assets/Textures/T13/eye_atlas_original.png.bin",
+      "bytes": 3733620,
+      "sha256": "68c7a7a1438be74f335a7bc8624b5d4685d3dce44fcb87127b0d18102a8b9272"
+    },
+    {
+      "path": "Source/Godot/runtime_assets/Textures/T13/eye_palette_manifest.json",
+      "bytes": 477,
+      "sha256": "b7ea1a354de1016d10ed6b7a90d15e218554b99b49ccb7ec068b0ec55a6c864f"
+    },
+    {
+      "path": "Source/Godot/runtime_assets/Textures/T13/iris_tint_mask.png.bin",
+      "bytes": 5646,
+      "sha256": "1f2c807f8f4a9870a9506b6f266d20eef845a095fd5c79bd5ec5e77b96187b59"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/default_permissions.json",
+      "bytes": 35,
+      "sha256": "8a533edfee119c5208c7742e49c7efb117d1d166345cfd54673a657caf68952d"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionAudit.gd",
+      "bytes": 3352,
+      "sha256": "0bdc74b870bfd38e196ee824bb3d2d06069cf684b4bbdcce7af0409cabe17da8"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionAudit.gd.uid",
+      "bytes": 20,
+      "sha256": "4be0369ca6af877421bb71896a4ce1dbd2fa6c90d9d90d6b827f9b30ea160599"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionMockDispatcher.gd",
+      "bytes": 521,
+      "sha256": "e4e0c935e83b3a64cf9ecc9795abd2105eb37738911250aaa179da95077451e7"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionMockDispatcher.gd.uid",
+      "bytes": 19,
+      "sha256": "5f95f3bd2b869c61a945ae0765404173786b5bc23a1e6d3130ea9c077ba8a836"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionPaths.gd",
+      "bytes": 2947,
+      "sha256": "4bf76a45327f06e4eb1eeba6030c4275d64b5f98372c621b67a333976c68968b"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionPaths.gd.uid",
+      "bytes": 20,
+      "sha256": "8a8a6aa53c8c26858d7802c1640774296754a53880d63c9f2f374d04a749e05e"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionPolicy.gd",
+      "bytes": 22574,
+      "sha256": "85cdb913bffe593007fa41e59b410ab2b12ae47434286b1e221aeea11e4e474d"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionPolicy.gd.uid",
+      "bytes": 19,
+      "sha256": "21c691b8c4150db85b6c905173816434d47690a57aeb0a954be450c597982fa2"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionReview.gd",
+      "bytes": 16223,
+      "sha256": "733627a05a1c8e64161a2df03a68774e956baea112ae96c176d1573fd9e6abb7"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionReview.gd.uid",
+      "bytes": 20,
+      "sha256": "a49f7d5f0592bac865982a2f95cc9716bb042b7bfbc9080f959837fd9b7ead86"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionRisk.gd",
+      "bytes": 401,
+      "sha256": "82926c06f7fa10f32983125ee653278f4ebbfb85786b7db48145eef976dc5be0"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionRisk.gd.uid",
+      "bytes": 19,
+      "sha256": "0436a29f901f8400ceb1ee24bfeba296c75dfae4631e66d6406d691efb354a8d"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionRuntime.gd",
+      "bytes": 477,
+      "sha256": "1369e8650ccebcb9870b64aad93160039e83d92495865c13fad9f88c11df5df4"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionRuntime.gd.uid",
+      "bytes": 19,
+      "sha256": "8caa0fb96e9402640afeec85918b45b4e0acf3a1176145a668d49758f8555720"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionSchema.gd",
+      "bytes": 3320,
+      "sha256": "ab3fb5a580bd500b28486e4d13cc2f311e0b0619ce0673d06186740796e5ea3e"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionSchema.gd.uid",
+      "bytes": 20,
+      "sha256": "f71e4d3bb64fa3de8245342f5fac54ee3ad466d2f6651138bb4b79e07e98e0db"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionService.gd",
+      "bytes": 5694,
+      "sha256": "c79168223ce5ea16f7902242c5b381384d1c18dce89fab75fa9f67ada4205359"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxActionService.gd.uid",
+      "bytes": 20,
+      "sha256": "141bf853eee41687739e0c898a61692710c66f59992424fb0f71ba6499f14caf"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxPermissionControls.gd",
+      "bytes": 11188,
+      "sha256": "49f2e86a1059654d42cf90bf3bca68d61e5be717b717235eeb041cc72de7663b"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxPermissionControls.gd.uid",
+      "bytes": 20,
+      "sha256": "006ee9ccaba18c241bb41980fe16cba039ea028491b160e4ebe75d072b1122fb"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxPermissionDialog.gd",
+      "bytes": 2332,
+      "sha256": "a01456142c53581ed4178e3cc6a5abe736427d191465f227ec7e7f3d0d4cef54"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxPermissionDialog.gd.uid",
+      "bytes": 19,
+      "sha256": "cc62a00b7c3ff1738c309a8de3a4af1dc37f63eaddb5d28558bfc6c7338b53c0"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxPermissionStore.gd",
+      "bytes": 2175,
+      "sha256": "3b1915574faef62a76437df3a418a94991fdaa0b3979e167af7ea146aefeba80"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxPermissionStore.gd.uid",
+      "bytes": 20,
+      "sha256": "cc014bc24bef723caac34a68a2ff25cf501b6161d8c3796cb76c6b823bc515e5"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxScopedActions.gd",
+      "bytes": 1684,
+      "sha256": "cd14289057a1cbbc440c8c7b7a652176c2a4eadafa9db0555dd20f1eb58a20d6"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxScopedActions.gd.uid",
+      "bytes": 20,
+      "sha256": "251db2d4d51077133363d198f019dbaa616375321f67a6a721e1a8f030f1b178"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxSystemInformation.gd",
+      "bytes": 1782,
+      "sha256": "a4ca8c93bade8a3a571833df2a65776b82bc794b6a1a945a5db37c64fa56c79c"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxSystemInformation.gd.uid",
+      "bytes": 20,
+      "sha256": "3ee324f459e887614850e744b3ac05f8e8d1af033e010751a280c67798edbb7b"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxTextReader.gd",
+      "bytes": 1347,
+      "sha256": "f43e9a7c5dd9bf2b6e7fc9b278dba54be1bbec9b942024bcedda33193e212351"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxTextReader.gd.uid",
+      "bytes": 20,
+      "sha256": "86272b876eca741760865cfd4c8029bece5d4f32b0db14509115d5d0ac8b58b9"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxWindowActions.gd",
+      "bytes": 1664,
+      "sha256": "1919e0d458d0ebe16e47a5837e29ccb3c1e0fa5fbc6bcf1990e790f963468c89"
+    },
+    {
+      "path": "Source/Godot/scripts/actions/FoxWindowActions.gd.uid",
+      "bytes": 20,
+      "sha256": "10ec5a8009a79957f86d59b0d1ea5172a372ed2ae32d8e7882c4319da596dea3"
+    },
+    {
+      "path": "Source/Godot/scripts/animation/FoxActorFactory.gd",
+      "bytes": 479,
+      "sha256": "0b1e0e1c3a5970000c95b8aba7c12cdedd605ffeb69f9b39d1475676aa4006ff"
+    },
+    {
+      "path": "Source/Godot/scripts/animation/FoxActorFactory.gd.uid",
+      "bytes": 20,
+      "sha256": "52e3bfe2d8bbb8f5877e4a4967d3c953601779ad750e631a1d7463959269c234"
+    },
+    {
+      "path": "Source/Godot/scripts/animation/FoxAnimationCatalog.gd",
+      "bytes": 3908,
+      "sha256": "7a7e41846e3eddcad1d0958abe4d1e23d5e38cdeb98087a3fd9e342829e9fa08"
+    },
+    {
+      "path": "Source/Godot/scripts/animation/FoxAnimationCatalog.gd.uid",
+      "bytes": 20,
+      "sha256": "205063b93bc502d10960c9d7490d63b84238cee00f6a77622f13dffd192e4d42"
+    },
+    {
+      "path": "Source/Godot/scripts/animation/FoxAnimationDirector.gd",
+      "bytes": 28537,
+      "sha256": "12654d303a92acf5aa7437aecf30313c3f5b9991d4c271a5c66bc3ae64220b76"
+    },
+    {
+      "path": "Source/Godot/scripts/animation/FoxAnimationDirector.gd.uid",
+      "bytes": 20,
+      "sha256": "3d7588f2dc7a6020a15766ef843550ed2cdb15c33c0ec0f9505b560da0ad3773"
+    },
+    {
+      "path": "Source/Godot/scripts/animation/FoxGroundContacts.gd",
+      "bytes": 6091,
+      "sha256": "d84bbe53eb268065b0e64cc23a9b51e274bfe199f637a91bc2c64d87581d72c3"
+    },
+    {
+      "path": "Source/Godot/scripts/animation/FoxGroundContacts.gd.uid",
+      "bytes": 20,
+      "sha256": "c7aca3c535c5d6e0fc5b8f5b0d3b3d46eacc2f70dbcde1eb5aeb66527e6e2850"
+    },
+    {
+      "path": "Source/Godot/scripts/animation/FoxPoseMixer.gd",
+      "bytes": 11191,
+      "sha256": "b48a1049557cd595fc40ec8d1acdf4c3b256c02a62ae3338fe473d78a9304a80"
+    },
+    {
+      "path": "Source/Godot/scripts/animation/FoxPoseMixer.gd.uid",
+      "bytes": 19,
+      "sha256": "378d12acb64ae0d491e3577f9e56d1b63deec63e9e673a3cd9ebd30ecb84761a"
+    },
+    {
+      "path": "Source/Godot/scripts/animation/FoxSkinSurface.gd",
+      "bytes": 2840,
+      "sha256": "f5c0a0d959f061d13cca6613671e2f1328ebd554d61861ec26f31d8447beec84"
+    },
+    {
+      "path": "Source/Godot/scripts/animation/FoxSkinSurface.gd.uid",
+      "bytes": 20,
+      "sha256": "25440a8417fedba621983943daf70e3f74af868473db0883c97dff8d9acd2734"
+    },
+    {
+      "path": "Source/Godot/scripts/audio/FoxAudioControls.gd",
+      "bytes": 2264,
+      "sha256": "cde0465abb271ff861205e5909de64bb38452b0277d7b42a9cf2d250ab4cd82f"
+    },
+    {
+      "path": "Source/Godot/scripts/audio/FoxAudioControls.gd.uid",
+      "bytes": 20,
+      "sha256": "6233d8e7dc90e20b43c5893b3da7150fa5b30c72709d00d23782ffac2149bdd5"
+    },
+    {
+      "path": "Source/Godot/scripts/audio/FoxAudioPlayer.gd",
+      "bytes": 2833,
+      "sha256": "450a3889d0b4c2c21aa97c44a038f24a9ce535e33925ca02cb03d9950333414c"
+    },
+    {
+      "path": "Source/Godot/scripts/audio/FoxAudioPlayer.gd.uid",
+      "bytes": 19,
+      "sha256": "d65e308e87c85f9f4040b0bb70bb537cae0799c8156bc5b78a77f691c704dcf2"
+    },
+    {
+      "path": "Source/Godot/scripts/audio/FoxAudioSettings.gd",
+      "bytes": 1187,
+      "sha256": "85fbc211b8fc8bbdf87ce8c06a7dfb0b559ed44910acd7dc765a37c63530750f"
+    },
+    {
+      "path": "Source/Godot/scripts/audio/FoxAudioSettings.gd.uid",
+      "bytes": 20,
+      "sha256": "8caf0180ecb9cb546fbd007f38cff583fb79250e663c9c8d4689a94031df3d2f"
+    },
+    {
+      "path": "Source/Godot/scripts/behavior/FoxHomeBehavior.gd",
+      "bytes": 4845,
+      "sha256": "f5b6119b73e437583f48c2b47b50b732af70d991713edb124ea19541e71c2954"
+    },
+    {
+      "path": "Source/Godot/scripts/behavior/FoxHomeBehavior.gd.uid",
+      "bytes": 20,
+      "sha256": "7e25714c5d19fa87e9cc6b03dbd4cc7399eb2f84f9650b4e3a77ef9dc77fb899"
+    },
+    {
+      "path": "Source/Godot/scripts/behavior/FoxHomeMotion.gd",
+      "bytes": 2802,
+      "sha256": "419fb19a1c3bc1f405d21b5368f489f542bca61c6bf3b3f186f3a4fbe9a084e4"
+    },
+    {
+      "path": "Source/Godot/scripts/behavior/FoxHomeMotion.gd.uid",
+      "bytes": 19,
+      "sha256": "29f9f0f8209b344653ae1201e8c89d9a1af8b5a6392624592ee09fe7e93c0816"
+    },
+    {
+      "path": "Source/Godot/scripts/behavior/FoxRestPlan.gd",
+      "bytes": 1970,
+      "sha256": "1c70adb28ea5f25ae08e105b9ce12dfd3f9ec767230f242b480e73a0da1b673f"
+    },
+    {
+      "path": "Source/Godot/scripts/behavior/FoxRestPlan.gd.uid",
+      "bytes": 19,
+      "sha256": "bc788041ceaa178649f6c8c2e72b2c565d9363dbb7c7cf1ea70b8e2d7c33d9f5"
+    },
+    {
+      "path": "Source/Godot/scripts/behavior/FoxRestPolicy.gd",
+      "bytes": 1463,
+      "sha256": "0cfacbdbb3c6258f5fd8880eba78649b974cb6dbc5e41eb2a6c3e3466512b917"
+    },
+    {
+      "path": "Source/Godot/scripts/behavior/FoxRestPolicy.gd.uid",
+      "bytes": 20,
+      "sha256": "f70f467f38b0496652a85dc103dc6b2316562b8ef7732671383787132bd83c33"
+    },
+    {
+      "path": "Source/Godot/scripts/behavior/FoxRestRoutine.gd",
+      "bytes": 10009,
+      "sha256": "e9d0b5076409eba9c9748d0a291184e79162d344a6c1c74556dc23bf64f703c8"
+    },
+    {
+      "path": "Source/Godot/scripts/behavior/FoxRestRoutine.gd.uid",
+      "bytes": 20,
+      "sha256": "c49e6a81c5dcf6605d6983954795200bedeefe05b8eb043ae1e80ec90f88cfbd"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/compact_glass.gdshader",
+      "bytes": 774,
+      "sha256": "9c17adb8ae76649d0188072c081d39d04eb6fdb541bc7f999d81c82e44eb25ba"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/compact_glass.gdshader.uid",
+      "bytes": 20,
+      "sha256": "dc5a1a6aa9442e88f13f4df1e4670f0bded920cd32b4cc30441b766259feaa57"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxChatApproach.gd",
+      "bytes": 4718,
+      "sha256": "a5ec5bcb013020596072987524c8feed4c7790d86c5e8e3715758b7a8a398870"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxChatApproach.gd.uid",
+      "bytes": 20,
+      "sha256": "be57b71e2ecc02966c604fb5d04ab8fdf26f145d71408a6af05d676356b2d679"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxChatController.gd",
+      "bytes": 10561,
+      "sha256": "23090b68c81bfacf0d322e296219cacd4ecb4c57fc6b7679fa94a135948f566f"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxChatController.gd.uid",
+      "bytes": 19,
+      "sha256": "f36c9888558f70c3c42cded95fc3ec9da25cac07e902b860fd487567415211f7"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxChatView.gd",
+      "bytes": 28521,
+      "sha256": "3729ab7aad7c3d2d2928dec820fadb53f2d8447288d67ec50d5cc9cf9770279a"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxChatView.gd.uid",
+      "bytes": 19,
+      "sha256": "034a4d481ff5cc854fef5d4860bdda3bd4d89947e2e4d03fe72b259f753fc5b1"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxCompactChat.gd",
+      "bytes": 16624,
+      "sha256": "4d4cfef01839a7d803f4be0a8f68c8030f5ea1593e0a1e67257ce10162986522"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxCompactChat.gd.uid",
+      "bytes": 20,
+      "sha256": "624bb919496205d7bec9e8cb3d46caa080041e14c5d7cf4cb1eb517855c88686"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxDataSections.gd",
+      "bytes": 5219,
+      "sha256": "16f143515656e488286e79e965a4a9ec06170077d31e8ad2ab1bb84f22332e88"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxDataSections.gd.uid",
+      "bytes": 20,
+      "sha256": "581cc9c77589ea37177624a1de31138e22a8d1de8166a6c1a7ed3043be91c48a"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxHistoryAtomic.gd",
+      "bytes": 3004,
+      "sha256": "7dd1e9b7143a564fcd0ddf39b670635d5617e2355fe232c4d52e9a09ba70cfa6"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxHistoryAtomic.gd.uid",
+      "bytes": 19,
+      "sha256": "eb6b6165a926e76aa924606fef3a840da941c84bc5dc5840cd8aecf123a5eb70"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxHistoryControls.gd",
+      "bytes": 3644,
+      "sha256": "efde1ca1ebcdaa8d9d7a7c0be96b8ac6bc237d10b0f49b177bc1f74cde51c081"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxHistoryControls.gd.uid",
+      "bytes": 20,
+      "sha256": "057eb90b97cdea5d4d42cec4952174c01b3aaf3d762ea57b0d32166fe785f1f1"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxHistoryStore.gd",
+      "bytes": 12631,
+      "sha256": "12a3787fef9ee0b82f0d3230e3f6398ff25ad76b0842f1d7b83ec91bc1719800"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxHistoryStore.gd.uid",
+      "bytes": 20,
+      "sha256": "ee2748765b15880da2aa9655163221c9dcd504a885f7dc7ccc7d0501286b90fd"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxMemoryControls.gd",
+      "bytes": 8156,
+      "sha256": "badf11106ea2871c409fd8cc059c98ed461bf9f24225dab2c83cddbb1576ed15"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxMemoryControls.gd.uid",
+      "bytes": 20,
+      "sha256": "09bd04ba48e96d7f5300f4901a2cbd26dc8efced4f1075fd398ddddb0f7c43c1"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxMemoryStore.gd",
+      "bytes": 7954,
+      "sha256": "743960bfbafda3857d30f490fbf06ec2e93aa68fdf9527ab92881f5f250b29bb"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxMemoryStore.gd.uid",
+      "bytes": 20,
+      "sha256": "d546cc026a88f6b0cc425acf86829731d048695cbd2fdab4aecb9d6499677718"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxMockProvider.gd",
+      "bytes": 2922,
+      "sha256": "3544bc20e7d501439b3deb066b1c2460498fe25bb3214d51c5384c2fd9ec29bb"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxMockProvider.gd.uid",
+      "bytes": 20,
+      "sha256": "c9e4d324ab7442ef08f02ac2c9607e2998fef7f9c018ae53c59f04ef86f5403b"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxModelManager.gd",
+      "bytes": 1849,
+      "sha256": "d1c4fae2d9e0a6ab0ae80917667bf1094d7a6a4041b5f02ee655572cf641436c"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxModelManager.gd.uid",
+      "bytes": 19,
+      "sha256": "743957233fea07801c6b1a17169057eae946eef3beebacdfb49bce54c65211f7"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxModelMenu.gd",
+      "bytes": 868,
+      "sha256": "8b9619bab2d0524690896f0911cc29128958f8b1ff035960ee3907e4e435b8da"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxModelMenu.gd.uid",
+      "bytes": 20,
+      "sha256": "7caa5c3dd935193a8a240bc3d9de0066f751e433b4ee43a40b9de211abd7029e"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxOllamaDiscovery.gd",
+      "bytes": 4651,
+      "sha256": "eddf21ad4ea8a0858240f3a8eb85fe37f325607fbea2cf2b267b8e0b4f5130cc"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxOllamaDiscovery.gd.uid",
+      "bytes": 19,
+      "sha256": "bcbab98cd19b7836368ea67e13db0d95809502b664f7befcba775eb1fdff0ffa"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxOllamaHTTP.gd",
+      "bytes": 6718,
+      "sha256": "a6126d062e4f7214122d794b3c5102396dfe3107401b02affe3fd29d4de514a8"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxOllamaHTTP.gd.uid",
+      "bytes": 20,
+      "sha256": "d96bfd80035ecc7048abf3f3fe294aa617ff3d153c818e56266ac3357ae6910f"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxOllamaProvider.gd",
+      "bytes": 18768,
+      "sha256": "f6a2b38c00a0ff5d6100ba7f4297d922cb507eb48fc9efe614136b584945d8f6"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxOllamaProvider.gd.uid",
+      "bytes": 20,
+      "sha256": "29fa147959781b7300088e4a6935d31ffeeb61334b550a3e564b965d673d6022"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxOllamaSettings.gd",
+      "bytes": 9894,
+      "sha256": "3559f8bc06e05401d9c292c9e0e0096af0deb95f09017bdebedf79723104a180"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxOllamaSettings.gd.uid",
+      "bytes": 20,
+      "sha256": "f4b730f4797c7a81d8fc423596f81e526f02853398abd08a28e7ede0fde5a69a"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxOllamaStream.gd",
+      "bytes": 3016,
+      "sha256": "7495f6ee52a2a59e50f10db6bcbc8a1cd181f5112627cdfbc65f5d2ed111eb02"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxOllamaStream.gd.uid",
+      "bytes": 20,
+      "sha256": "955730bbb5dfa20fd542fa4d73dde3e06995d2c686f5708f52b5f44e1b4208b8"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxSafeMarkdown.gd",
+      "bytes": 3163,
+      "sha256": "77df22cd61ebcbde03ce09aa0656f5a43e47d6f041ff778d6f776829c749a21f"
+    },
+    {
+      "path": "Source/Godot/scripts/chat/FoxSafeMarkdown.gd.uid",
+      "bytes": 20,
+      "sha256": "517e0bab482dde678fb6a2125c49da24a3f53c5ad917ccd9047b2143acfbcdcd"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxCursorAttention.gd",
+      "bytes": 3337,
+      "sha256": "5043b04e5883a03e7132fa2e942c0f1270b4712fc36657192ba837a68a371557"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxCursorAttention.gd.uid",
+      "bytes": 19,
+      "sha256": "531b54c6813292956d7c1bda166231bfec5e7b675b25c075e2c458f3f1a279cf"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxCursorFollow.gd",
+      "bytes": 5393,
+      "sha256": "fc67caac1c4e5b0b1cf2af8f760f155e2e46c2b0d06fd00d648bd091955bbcb1"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxCursorFollow.gd.uid",
+      "bytes": 19,
+      "sha256": "590a28f421ba29f76e4198b8eb68074efef15e7fffc9d3b8c1e94ec56969dc42"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxDesktopDrag.gd",
+      "bytes": 2938,
+      "sha256": "821e328265339d42009d17c5f53ea2a2bba65eebba70901710aaec2f737931c1"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxDesktopDrag.gd.uid",
+      "bytes": 20,
+      "sha256": "90809056e1082ce4b5beba84be394de6ec5a5f71e9eca39f1469111c5ea83982"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxGazeGeometry.gd",
+      "bytes": 696,
+      "sha256": "5024bf8991358635da3a414bb1c44a793dc3809518bfe107a40dae62a3e551e0"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxGazeGeometry.gd.uid",
+      "bytes": 20,
+      "sha256": "a303facba6a7aa66982948bb43174a8027fc8b79c70f440aed5bcf9189c0a53f"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxHomeStore.gd",
+      "bytes": 2400,
+      "sha256": "2b33dbab079b38710de200f092a965816d549e4aa8405ef1909ea1011c799898"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxHomeStore.gd.uid",
+      "bytes": 19,
+      "sha256": "4fe2e72f2070188bb6cb7d4670faea2f620f75ae3d5854d7224829208a307f73"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxHoverHint.gd",
+      "bytes": 1420,
+      "sha256": "6104276709ba6cd3ab6ab447da3c89a2ab6d8e646681a5268b56bf8708d3e4a9"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxHoverHint.gd.uid",
+      "bytes": 20,
+      "sha256": "dfe576a435bea3245690e4e6571b250d2e797d146682a78c62ad30d50665035d"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxHoverTurn.gd",
+      "bytes": 2494,
+      "sha256": "09f5eedb27234ae760d401b8f2dc81109a6c6fe1d5725596da6c4444912018cb"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxHoverTurn.gd.uid",
+      "bytes": 20,
+      "sha256": "32247e5bc6f6ce06598ea2bfe28789f8b6215577e6307d24cfa1fa159a0e6dab"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxInputSettings.gd",
+      "bytes": 1533,
+      "sha256": "f164ac52d5d50257af97cbdb6fda94d06a35ed2bae21b578dfe34e3e2a2608c9"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxInputSettings.gd.uid",
+      "bytes": 20,
+      "sha256": "a4db5e4447a20c291cc63d09a281bd5840eaad25212e40e6514671ed7f811699"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxPointerClassifier.gd",
+      "bytes": 2542,
+      "sha256": "d1df19457201d4f3657f053fb0a7c76189a87459d3e3d2b719535f0b802b01b1"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxPointerClassifier.gd.uid",
+      "bytes": 20,
+      "sha256": "88e177cac9549d8c3e4f91521482a749b332f8a694c49b6a04777a96fb8888df"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxPointerCoordinates.gd",
+      "bytes": 1056,
+      "sha256": "9e56961a48352463a45e9f1801e28ca215d11e77c091ad76e6cab541ba8c663a"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxPointerCoordinates.gd.uid",
+      "bytes": 20,
+      "sha256": "60a643ccc6b21beb1a5367a54bad543cddaecddcf27dada077d4e2a5d524fe49"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxPopupStyle.gd",
+      "bytes": 2361,
+      "sha256": "5360a884294a7d883de18e4bfa8c92e96faa8d64a2cf9e584b5fd5a2bf94c9ac"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxPopupStyle.gd.uid",
+      "bytes": 20,
+      "sha256": "d2308d8132422da584e229cf25675816769b68a9d43f2568ce4223bc5d379eff"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxQuickMenu.gd",
+      "bytes": 3663,
+      "sha256": "60681f6e09927585a57c599294a9a9e5917b5cf1d9a6db8788f6aabad4c796c4"
+    },
+    {
+      "path": "Source/Godot/scripts/interaction/FoxQuickMenu.gd.uid",
+      "bytes": 20,
+      "sha256": "5f937ae40e23b508bcbf62822360707b161bbe293ff572315e533e7c3f792456"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/DesktopFoxOverlay.gd",
+      "bytes": 66103,
+      "sha256": "769f4689172b0b786464e6b5011b2b97f8b341f8bf1a792b6ca107a6e1d0d738"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/DesktopFoxOverlay.gd.uid",
+      "bytes": 19,
+      "sha256": "b5303c6bc94b1bd8d36f245e7eff4bd8280b0696d33aee04f12040955ae8765c"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/FoxDialogGuard.gd",
+      "bytes": 2026,
+      "sha256": "e73781763ad43973edad34aec8760b159386e52d95f6c60fbbbc1c4d1333cb84"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/FoxDialogGuard.gd.uid",
+      "bytes": 20,
+      "sha256": "f9f0d27753887945c09e6d1670b696b3f91f7bf7278e8e3f7a7cdcfa35e1389e"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/FoxFullscreenPolicy.gd",
+      "bytes": 643,
+      "sha256": "df94f48eee1576e9360e5dcf8a55b4972171b4617a1044009c4473e03b8f5695"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/FoxFullscreenPolicy.gd.uid",
+      "bytes": 20,
+      "sha256": "ecd0075bb3f84348a5d1e25ca9e7e9253a9c7a0d428bb23ce9b74f31bfc05b22"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/FoxLifecycle.gd",
+      "bytes": 1330,
+      "sha256": "cfe5bd9883da57b79dcf48b9ff5bf232958111cb4a8860ad5c31deacb49f03af"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/FoxLifecycle.gd.uid",
+      "bytes": 20,
+      "sha256": "bf7709cb613298fa7f94c80edc8a6d52de578e3fd713fe47a56755811e50b7d5"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/FoxRenderCadence.gd",
+      "bytes": 780,
+      "sha256": "f758ff213d42e4df2783d0116584be446b307079a2f7bd3c83b14032f77b83ff"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/FoxRenderCadence.gd.uid",
+      "bytes": 20,
+      "sha256": "9064f28f4858000b58311757a631415985646a79cd0388605ba0f8c3a79f5db1"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/FoxRenderLook.gd",
+      "bytes": 910,
+      "sha256": "63fc184f6d83d89d66d0fb4eeb10e7fb1b07bfd8bb48531d4a912ec6addb53e6"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/FoxRenderLook.gd.uid",
+      "bytes": 20,
+      "sha256": "21a2d8ae8777c5a685fc9129e30b8a4a1cfa37f9726073c02da243c4e6f6ad0f"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/FoxStartup.gd",
+      "bytes": 1018,
+      "sha256": "8b93b42dced9aecaf39be93ccd7334ffe1782ef6456db3a42cd84e1065d139ab"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/FoxStartup.gd.uid",
+      "bytes": 20,
+      "sha256": "135f7635182753b63a96d652d15a5c6e9e550477c5a20dcb611445545b040cf6"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/OverlayPrototype.gd",
+      "bytes": 23186,
+      "sha256": "5a1cdb1f8cbd45e13582dafbaa71fe3e7a5394807838078b717d3657c44122e7"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/OverlayPrototype.gd.uid",
+      "bytes": 20,
+      "sha256": "edbe707b6dcfebdf07c3f5600e0bc62fdeff9f1d3b7058a549c3b9412111a097"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/WindowGeometry.gd",
+      "bytes": 1144,
+      "sha256": "0ec18022ad77d5bd271c67ae5de991c3c8e80c76aeb1a3c553f32c27236ec2a1"
+    },
+    {
+      "path": "Source/Godot/scripts/platform/WindowGeometry.gd.uid",
+      "bytes": 20,
+      "sha256": "df1aadbb327c1bf085c40579c32a9e834de1f24f7a26590d5e09143c52726201"
+    },
+    {
+      "path": "Source/Godot/scripts/settings/FoxAtomicJson.gd",
+      "bytes": 2089,
+      "sha256": "163840618a8c0e4e716a6ce4dea8fbeb800695d3159f14b8b1193f8e4efe5feb"
+    },
+    {
+      "path": "Source/Godot/scripts/settings/FoxAtomicJson.gd.uid",
+      "bytes": 20,
+      "sha256": "8bb192d16c02274b3b9356639a0c0a65861388ed7a615c11c0d8f4f8471da507"
+    },
+    {
+      "path": "Source/Godot/scripts/settings/FoxControlsLayout.gd",
+      "bytes": 3847,
+      "sha256": "9837731f924707233eab34acff786b082b8e83fc602529b48fd1c9cd63c7f102"
+    },
+    {
+      "path": "Source/Godot/scripts/settings/FoxControlsLayout.gd.uid",
+      "bytes": 19,
+      "sha256": "9d093aecc201d4b1a98269df344809224be0f62aa8a0e44bf6c2b4ceb0d3f4b7"
+    },
+    {
+      "path": "Source/Godot/scripts/settings/FoxDataMigration.gd",
+      "bytes": 4317,
+      "sha256": "92631415739c322eab6f9773dd681a74a5d8b274a357ceb0ca11c9e52c3c0052"
+    },
+    {
+      "path": "Source/Godot/scripts/settings/FoxDataMigration.gd.uid",
+      "bytes": 19,
+      "sha256": "7f0eb4ad4250a2b9f88f95f0b7f821bda85ffe8fcf0423fe96ca81a9deaa002d"
+    },
+    {
+      "path": "Source/Godot/scripts/settings/FoxEyePalette.gd",
+      "bytes": 2315,
+      "sha256": "31d65fffc56158a7675d87c5b0d537ea7cd82388f3a5f164c69db7bc56d03af9"
+    },
+    {
+      "path": "Source/Godot/scripts/settings/FoxEyePalette.gd.uid",
+      "bytes": 20,
+      "sha256": "4a3373b273132b0ddcbb2d028bbeec5054fd2f3239a99b1dc13cb2ed4c3f5381"
+    },
+    {
+      "path": "Source/Godot/scripts/settings/FoxFirstRun.gd",
+      "bytes": 5546,
+      "sha256": "25f95e637ac5d320b0250dd78b50f01c3a79a0e5637c09c4e5ab967070952721"
+    },
+    {
+      "path": "Source/Godot/scripts/settings/FoxFirstRun.gd.uid",
+      "bytes": 19,
+      "sha256": "d54e49c02eee03aca408e7a45877cff6cc553162e29f599a866e4e4eeb7b7a76"
+    },
+    {
+      "path": "Source/Godot/scripts/settings/FoxPreferences.gd",
+      "bytes": 2155,
+      "sha256": "0465a443d09e0c2ec21776eac0f9da3aed112ee5799510c829fadd8eb70ffa6c"
+    },
+    {
+      "path": "Source/Godot/scripts/settings/FoxPreferences.gd.uid",
+      "bytes": 19,
+      "sha256": "407c154a07963cae1b07002962d61ebaf1117ff363dde78d2d0401eaf4fc43c8"
+    },
+    {
+      "path": "Source/Godot/scripts/settings/FoxPreferencesControls.gd",
+      "bytes": 6853,
+      "sha256": "06856c73214f1545075dab1c24b8c6689765d25292c3d57f1f34d69d0983d522"
+    },
+    {
+      "path": "Source/Godot/scripts/settings/FoxPreferencesControls.gd.uid",
+      "bytes": 19,
+      "sha256": "1e7f53a5ead5048c1529c5b527dd18f8612a082c920cd3c329e46128c718fa86"
+    },
+    {
+      "path": "Source/Native/vendor/gdextension_interface.h",
+      "bytes": 142425,
+      "sha256": "640b48188708ba0016f8d7ace9e0e1d3279a41fa1226c59ff3193b15538bd254"
+    }
+  ]
+}
