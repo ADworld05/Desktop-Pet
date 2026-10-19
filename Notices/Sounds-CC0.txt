@@ -1,0 +1,7 @@
+Desktop Fox original synthesized sound assets
+
+To the extent possible under law, the author dedicates these original WAV assets to the public domain under CC0 1.0 Universal.
+License identifier: CC0-1.0
+Legal text: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+Generated locally without third-party samples, recordings, or downloads. The chirps are stylized sound effects, not recordings of a real fox. The dedication applies to these three WAV assets, not to the supplied fox model or third-party project dependencies.
