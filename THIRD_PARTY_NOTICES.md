@@ -1,6 +1,6 @@
 # License scope and third-party notices
 
-The root MIT license applies to original Desktop Fox project code and documentation to the extent the project may license them. It does not replace separate licenses on third-party assets, libraries, generated engine binaries or model weights.
+The root MIT license applies to original Desktop Pet project code and documentation to the extent the project may license them. It does not replace separate licenses on third-party assets, libraries, generated engine binaries or model weights.
 
 - **Fox model and original animations:** Fox by **pxltiger**, CC BY 4.0 as identified in the supplied GLB metadata. Source: https://sketchfab.com/3d-models/fox-39f97fe58f0b47ce80b6e02814001dd7 . Keep the complete `Notices/Fox-Attribution.md`, including verification limits and project modification history. License: https://creativecommons.org/licenses/by/4.0/ . Abir Dutta's project credit does not claim original creation of this model.
 - **Godot:** retain `Notices/Godot-License.txt` and `Notices/Godot-Third-Party.txt` with distributions.

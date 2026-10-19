@@ -1,0 +1,17 @@
+**/.godot/
+**/__pycache__/
+*.pyc
+*.log
+*.tmp
+*.exe
+*.dll
+*.pck
+*.zip
+/.build/
+/dist/
+/Runtime/
+/Tools/
+/Models/
+/Backups/
+/Validation/
+Installer/Source/payload.json

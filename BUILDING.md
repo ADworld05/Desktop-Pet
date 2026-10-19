@@ -1,23 +1,56 @@
-# Building Desktop Fox
+# Building Desktop Pet on Windows
 
-Packaged users do not need these development tools. Use installer/portable assets from GitHub Releases when available.
+Packaged users do not need development tools. The local builder uses existing tools and never downloads software, templates or AI models.
 
-## Toolchain
+## Prerequisites
 
-- Godot 4.7.2 Standard and matching Windows x64 export templates.
-- A Windows C/MinGW toolchain for native DLLs, launchers and setup helpers; resource compiler for manifests/version resources.
-- Python for existing packaging utilities.
-- Blender 4.5.9 LTS only when editing/rebaking 3D assets. Existing runtime assets are under Source/Godot/runtime_assets.
+- Windows x64 and Python 3.10 or newer on PATH.
+- Godot **4.7.2 Standard** and its matching Windows x64 export templates. The C# edition is not required.
+- **x86_64 MinGW-w64 GCC**, Windows headers/libraries and `windres` from the same toolchain.
+- The included runtime assets and notices. Blender is not needed for this runtime build.
 
-## Current workflow and gaps
+## Build
 
-1. Review native build scripts under Source/Native and replace toolchain locations with your own installed compiler. Do not run paths copied from another computer.
-2. Build the native bridges into Source/Godot/native and produce the launcher/startup helpers. Preserve their adjacent .gdextension descriptors.
-3. With those dependencies available, import Source/Godot/project.godot in the matching Godot editor. The application entry scene is scenes/DesktopFox.tscn.
-4. Review export_presets.cfg output paths; export the Windows Portable Release preset with required raw runtime assets. Keep engine/PCK/native DLLs/helpers together and expose DesktopPet.exe as the launcher.
-5. Curate application assets/notices, generate checksums and installer payload.json/payload.zip, then export Installer/Source with matching native helpers. The self-extracting installer requires its checked bundle and version resources.
-6. Verify the actual ZIP and standalone installer, plus isolated install/update/uninstall and user-data preservation. Signed builds require signatures before dependent payload hashes are generated and outer setup signing last.
+From the repository root:
 
-This workflow has been used for the packaged build, but the prepared public source does not yet provide a portable end-to-end build command or a complete CI pipeline. Native scripts/export paths still need cleanup; original packaging utilities depend on additional build inputs and are not currently shipped as a ready fresh-clone recipe. No unverified command is offered as turnkey setup.
+```powershell
+python scripts/check_source.py
+python scripts/build_windows.py --godot godot --cc gcc --templates "<matching template folder>" --installer
+```
 
-Contributions improving reproducible builds and CI are welcome. Preserve attribution and avoid publishing personal runtime data, model weights, caches, credentials or signing keys.
+Replace the template placeholder with the existing directory containing `windows_release_x86_64.exe`. Pass full executable paths for `--godot` and `--cc` when they are not on PATH. `windres.exe` is found beside GCC, or selected with `--windres`. Omit `--installer` for only the portable package. A self-contained Godot installation can also find its own templates without `--templates`.
+
+The builder checks Godot/compiler versions, builds four DLLs and two helpers, imports/exports the application, includes notices and creates inventories/hashes. For setup it copies installer sources into an isolated build project, embeds the verified payload, compiles shortcuts/resources/bootstrap, and verifies the embedded bundle using extraction-only `/verify`. It does **not** install, launch the pet, register an uninstaller or modify shared Ollama settings.
+
+```text
+dist/1.0.0-rc.7/
+├── DesktopPet/                  # Run DesktopPet.exe here
+├── DesktopPet_Portable.zip
+└── DesktopPet_Setup.exe         # With --installer
+.build/
+├── logs/                        # Compiler/import/export diagnostics
+├── Installer/                   # Generated payload and finite setup bundle
+└── build_result.json            # Hashes and validation scope
+```
+
+Build profiles stay inside `.build`; normal use retains ordinary Windows user-data locations. Outputs are unsigned **review candidates**, not automatically published releases. Tool versions, timestamps and resources can affect binary hashes; the build is source-portable, not claimed bit-for-bit reproducible.
+
+For editor development, build native bridges first, then import `Source/Godot/project.godot`. Main scene: `scenes/DesktopFox.tscn`. Optional historical proof fixtures and Blender authoring inputs are not distributed; see `Source/Blender/README.md`.
+
+## Product naming and compatibility
+
+Visible product labels and new archives use **Desktop Pet**. Internal `DesktopFox.exe`, `DesktopFox.pck`, native `fox_*` bridges, schemas, shortcut ownership filenames and `%APPDATA%/DesktopFox` / `%LOCALAPPDATA%/DesktopFox` remain compatible with existing installs. Do not rename these separately: title allowlists, launchers, setup ownership checks and data paths must agree. Existing custom pet names are preserved. The supplied animal remains a fox; the original asset's credited title is unchanged.
+
+## CI draft
+
+`.github/workflows/windows-review.yml` is a **manual-only draft**. It requires a dedicated trusted Windows x64 self-hosted runner labelled `desktop-pet-build` with the above tools and Python installed. Supply the runner's actual tool/template paths when dispatching. It does not download tools, use signing secrets, create releases or run on untrusted pull requests. Action versions are pinned to verified commits. Do not attach a personal runner to arbitrary public contributions.
+
+The workflow has **not** been run on GitHub. Local compilation/export, ZIP integrity and setup `/verify` are checked separately from interactive installation/update/uninstall and Windows UI appearance. A GitHub-hosted runner configuration remains future work.
+
+On the development machine, Godot sometimes exits with Windows access-violation code `0xC0000005` after creating a fresh installer import cache. The builder retains that log and retries an import **once**, only for that exit code and without a script error. A repeated crash or script error fails the build. This is a recorded tooling limitation, not a certified engine fix.
+
+## Signing and distribution
+
+Keep generated binaries, private data, model weights and keys out of source commits. For public signing, choose a trusted certificate/service and complete its identity checks separately. Sign payload components before computing dependent hashes, assemble setup, sign outer setup last, regenerate distribution hashes and repeat lifecycle checks. Never replace published bytes under an old hash/version. No certificate has been purchased or signing performed.
+
+Native integration is Windows-specific; there is no supported Linux/macOS runtime build.

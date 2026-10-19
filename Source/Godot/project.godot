@@ -1,0 +1,32 @@
+; Desktop Pet — T08 actual actor and animation director.
+config_version=5
+
+[application]
+config/name="Desktop Pet Assistant"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="DesktopFox"
+run/main_scene="res://scenes/DesktopFox.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+
+[display]
+window/per_pixel_transparency/allowed=true
+; T02: enable borderless in the startup script after NO_FOCUS is installed.
+; The Windows backend applies BORDERLESS/TOPMOST before NO_FOCUS at startup.
+window/size/borderless=false
+window/size/transparent=true
+window/size/no_focus=true
+window/size/always_on_top=false
+window/subwindows/embed_subwindows=false
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=640
+window/size/window_height_override=360
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 0)
+viewport/transparent_background=true
+
+[debug]
+file_logging/enable_file_logging=false
