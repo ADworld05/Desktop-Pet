@@ -5,12 +5,13 @@ ROOT=Path(__file__).resolve().parents[1]
 def files():
  for f in ROOT.rglob('*'):
   parts=f.relative_to(ROOT).parts
-  if not f.is_file() or any(x in {'.git','.godot','.build','dist','__pycache__'} for x in parts) or f.suffix in {'.dll','.exe','.pyc'}:continue
+  if not f.is_file() or any(x in {'.git','.godot','.build','dist','__pycache__'} for x in parts) or f.suffix.lower() in {'.dll','.exe','.pyc'}:continue
   yield f
 def main():
  errors=[];entries=[]
  for f in files():
   rel=f.relative_to(ROOT).as_posix();raw=f.read_bytes();entries.append({'path':rel,'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()})
+  if f.suffix.lower() in {'.tmp','.log','.pck','.zip'}:errors.append(rel+': generated temporary/archive input')
   if len(raw)>95*1024*1024:errors.append(rel+': exceeds reviewed source file size limit')
   if any(x in {'Runtime','History','Memory','Backups','Tools','Validation'} for x in Path(rel).parts):errors.append(rel+': private/generated directory')
   if f.suffix.lower() in {'.gd','.c','.h','.inc','.py','.md','.cfg','.json','.tscn','.tres','.gdextension','.yml','.yaml','.ps1','.txt'}:

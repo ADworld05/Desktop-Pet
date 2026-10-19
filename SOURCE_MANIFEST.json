@@ -88,8 +88,8 @@
     },
     {
       "path": "scripts/check_source.py",
-      "bytes": 2037,
-      "sha256": "a65252957438e6fa1f7ab0e9103d359d3bea6d49a9790eb5ecd0a17821443646"
+      "bytes": 2185,
+      "sha256": "5b8a1f6c0e1ac2cd5a6b866384fa1316f62c6fd72758497fb5c1862fdff134a8"
     },
     {
       "path": "docs/images/compact-chat.png",
@@ -315,11 +315,6 @@
       "path": "Source/Godot/native/fox_window.gdextension.uid",
       "bytes": 20,
       "sha256": "74a306a836869a548372c2f43059ae33d5bc3e27bd9a648078aa06b2d9643d15"
-    },
-    {
-      "path": "Source/Godot/native/~fox_window.dll~RFe45994.TMP",
-      "bytes": 55262,
-      "sha256": "40fcfe8d9040e45b535872e32880d20eb20690519308c0b772e5591b18f8dd12"
     },
     {
       "path": "Source/Godot/scenes/DesktopFox.tscn",
