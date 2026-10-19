@@ -43,7 +43,7 @@ static int setup_maintenance(const WCHAR *action) {
     }
     if(!k && RegCreateKeyExW(HKEY_CURRENT_USER,key,0,NULL,0,KEY_READ|KEY_WRITE,NULL,&k,NULL)!=ERROR_SUCCESS)return 13;
     struct {const WCHAR *name,*value;} values[]={
-        {L"DisplayName",L"Desktop Pet"},{L"DisplayVersion",L"1.0.0-rc.6"},
+        {L"DisplayName",L"Desktop Pet"},{L"DisplayVersion",L"1.0.0-rc.7"},
         {L"Publisher",L"Desktop Pet project"},{L"InstallLocation",root},
         {L"UninstallString",command},{L"ModifyPath",modify},{L"MaintenanceSHA256",hash}
     };

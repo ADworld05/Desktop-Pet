@@ -12,7 +12,7 @@ It combines an animated desktop pet, mouse interactions, local AI chat, persiste
 
 Created and maintained by **Abir Dutta** ([ADworld05](https://github.com/ADworld05)). Original project code is MIT licensed; the fox model and other dependencies retain their own licenses.
 
-> **Status:** the current build is an unsigned Windows x64 release candidate, `1.0.0-rc.6`. Public release assets and source publication are being prepared. Check [Releases](https://github.com/ADworld05/Desktop-Pet/releases) for availability; a downloadable package may not yet be published. Portable and standalone-setup source build commands are provided; the manual CI draft has not run remotely—see [BUILDING.md](BUILDING.md).
+> **Status:** the current build is an unsigned Windows x64 release candidate, `1.0.0-rc.7`. Public release assets and source publication are being prepared. Check [Releases](https://github.com/ADworld05/Desktop-Pet/releases) for availability; a downloadable package may not yet be published. Portable and standalone-setup source build commands are provided; the manual CI draft has not run remotely—see [BUILDING.md](BUILDING.md).
 
 ## Contents
 
@@ -201,6 +201,7 @@ Desktop Pet does **not** have unrestricted access, arbitrary shell execution, pr
 Settings are grouped into **General, Gestures, Movement, Sound, Permissions, Thresholds and Advanced**. Available preferences include:
 
 - Pet name, optional user name, size and eye color.
+- The pet stays out of the taskbar by default and remains available in the system tray/hidden icons. Existing profiles receive this default once; you can opt in later with Show pet in taskbar. Chat and Settings retain normal window controls.
 - Topmost/taskbar behavior and optional full-screen pause.
 - Cursor sensitivity, attention radius, smoothing and gesture timing.
 - Follow hold/distance gates, delay, walk/run speeds, arrival distance and turning/reversal thresholds.

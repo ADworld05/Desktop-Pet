@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,hashlib,json,os,shutil,subprocess,zipfile
 ROOT=Path(__file__).resolve().parents[1]
-VERSION='1.0.0-rc.6'
+VERSION='1.0.0-rc.7'
 def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--godot',required=True,help='Godot4.7.2 Standard executable');p.add_argument('--cc',default='gcc',help='64-bit MinGW-w64 GCC');p.add_argument('--templates',help='Directory containing the matching Windows export templates');p.add_argument('--installer',action='store_true',help='Also build and verify the standalone setup');p.add_argument('--windres',help='MinGW-w64 resource compiler (default: beside GCC)');a=p.parse_args()
  if os.name!='nt':raise SystemExit('This build entry point requires Windows.')

@@ -11,7 +11,7 @@ var summary: Label
 var pass_toggle: CheckButton
 var top_toggle: CheckButton
 var taskbar_toggle: CheckButton
-var taskbar_visible := true
+var taskbar_visible := false
 var last_dpi := 0
 var menu: RID
 var tray_id := -1

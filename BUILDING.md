@@ -23,7 +23,7 @@ Replace the template placeholder with the existing directory containing `windows
 The builder checks Godot/compiler versions, builds four DLLs and two helpers, imports/exports the application, includes notices and creates inventories/hashes. For setup it copies installer sources into an isolated build project, embeds the verified payload, compiles shortcuts/resources/bootstrap, and verifies the embedded bundle using extraction-only `/verify`. It does **not** install, launch the pet, register an uninstaller or modify shared Ollama settings.
 
 ```text
-dist/1.0.0-rc.6/
+dist/1.0.0-rc.7/
 ├── DesktopPet/                  # Run DesktopPet.exe here
 ├── DesktopPet_Portable.zip
 └── DesktopPet_Setup.exe         # With --installer

@@ -2,7 +2,7 @@ extends RefCounted
 const Atomic=preload("FoxAtomicJson.gd")
 static var PATH: String:
 	get: return preload("res://scripts/Paths.gd").directory("config").path_join("preferences.json")
-const DEFAULTS:={"version":1,"pet_name":"Pet","user_name":"","size_percent":100.0,"eye_color":"Original","topmost":true,"taskbar":true,"fullscreen_pause":false,"fullscreen_policy_version":2,"glass_opacity":0.72,"glass_blur":0.75,"glass_tint":0.3}
+const DEFAULTS:={"version":1,"pet_name":"Pet","user_name":"","size_percent":100.0,"eye_color":"Original","topmost":true,"taskbar":false,"taskbar_policy_version":1,"fullscreen_pause":false,"fullscreen_policy_version":2,"glass_opacity":0.72,"glass_blur":0.75,"glass_tint":0.3}
 const EYE_COLORS:=["Original","Blue","Green","Amber"]
 var values:Dictionary=DEFAULTS.duplicate()
 var load_status:="missing"
@@ -33,6 +33,8 @@ func load_local(path:String="") -> void:
 	var candidate:Dictionary=loaded.data.duplicate()
 	# User requested one explicit default change. After migration, retain an opt-in.
 	if candidate.get("fullscreen_policy_version",0)<2:candidate.fullscreen_pause=false
+	# Hide legacy pet taskbar entries once; a later explicit opt-in is retained.
+	if candidate.get("taskbar_policy_version",0)<1:candidate.taskbar=false
 	values=sanitize(candidate)
 
 func save_local(path:String="") -> Error:
