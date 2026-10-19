@@ -2,7 +2,7 @@ extends RefCounted
 const Atomic=preload("FoxAtomicJson.gd")
 static var PATH: String:
 	get: return preload("res://scripts/Paths.gd").directory("config").path_join("preferences.json")
-const DEFAULTS:={"version":1,"pet_name":"Fox","user_name":"","size_percent":100.0,"eye_color":"Original","topmost":true,"taskbar":true,"fullscreen_pause":false,"fullscreen_policy_version":2,"glass_opacity":0.72,"glass_blur":0.75,"glass_tint":0.3}
+const DEFAULTS:={"version":1,"pet_name":"Pet","user_name":"","size_percent":100.0,"eye_color":"Original","topmost":true,"taskbar":true,"fullscreen_pause":false,"fullscreen_policy_version":2,"glass_opacity":0.72,"glass_blur":0.75,"glass_tint":0.3}
 const EYE_COLORS:=["Original","Blue","Green","Amber"]
 var values:Dictionary=DEFAULTS.duplicate()
 var load_status:="missing"

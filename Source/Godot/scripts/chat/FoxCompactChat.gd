@@ -39,7 +39,7 @@ var content:Control
 var layout_serial:=0
 func initialize(view:Node) -> void:
 	owner_view=view;host=view.host;controller=view.controller
-	window=Window.new();window.visible=false;window.name="CompactChat";window.title="Desktop Fox — Compact Chat";window.force_native=true;window.borderless=true;window.transparent=true;window.transparent_bg=true;window.unfocusable=false;window.size=Vector2i(WIDTH,INPUT_HEIGHT);window.min_size=Vector2i(WIDTH,INPUT_HEIGHT);window.max_size=Vector2i(WIDTH,ANSWER_HEIGHT);window.visible=false;window.theme=view.window.theme;add_child(window)
+	window=Window.new();window.visible=false;window.name="CompactChat";window.title="Desktop Pet — Compact Chat";window.force_native=true;window.borderless=true;window.transparent=true;window.transparent_bg=true;window.unfocusable=false;window.size=Vector2i(WIDTH,INPUT_HEIGHT);window.min_size=Vector2i(WIDTH,INPUT_HEIGHT);window.max_size=Vector2i(WIDTH,ANSWER_HEIGHT);window.visible=false;window.theme=view.window.theme;add_child(window)
 	window.close_requested.connect(close_popup);window.size_changed.connect(_size_changed)
 	surface=Control.new();surface.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);window.add_child(surface)
 	glass=ColorRect.new();glass.mouse_filter=Control.MOUSE_FILTER_IGNORE;glass.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);surface.add_child(glass)
@@ -64,7 +64,7 @@ func initialize(view:Node) -> void:
 		if follow_latest:_bottom.call_deferred())
 	# Range changes during streaming must never undo a user's scroll-up pause.
 	scroll.get_v_scroll_bar().gui_input.connect(_scroll_input);scroll.gui_input.connect(_scroll_input)
-	composer=TextEdit.new();composer.placeholder_text="Ask your fox…";composer.wrap_mode=TextEdit.LINE_WRAPPING_BOUNDARY;composer.scroll_fit_content_height=false;composer.scroll_fit_content_width=false;composer.scroll_smooth=true;composer.scroll_v_scroll_speed=200;composer.add_theme_font_size_override("font_size",14)
+	composer=TextEdit.new();composer.placeholder_text="Ask your pet…";composer.wrap_mode=TextEdit.LINE_WRAPPING_BOUNDARY;composer.scroll_fit_content_height=false;composer.scroll_fit_content_width=false;composer.scroll_smooth=true;composer.scroll_v_scroll_speed=200;composer.add_theme_font_size_override("font_size",14)
 	for state in ["normal","focus","read_only"]:
 		var style:=StyleBoxEmpty.new();style.content_margin_right=32;style.content_margin_top=4;style.content_margin_bottom=3;composer.add_theme_stylebox_override(state,style)
 	composer.text_changed.connect(_draft);composer.gui_input.connect(_keyboard);content.add_child(composer)
@@ -150,7 +150,7 @@ func _size_changed() -> void:
 	if window.visible:apply_native()
 func apply_glass(values:Dictionary) -> void:
 	owner_view.apply_full_glass()
-	prefs=values.duplicate();title.text=prefs.get("pet_name","Fox");material.set_shader_parameter("opacity",prefs.get("glass_opacity",.72));material.set_shader_parameter("tint",prefs.get("glass_tint",.3));material.set_shader_parameter("frost",prefs.get("glass_blur",.75))
+	prefs=values.duplicate();title.text=prefs.get("pet_name","Pet");material.set_shader_parameter("opacity",prefs.get("glass_opacity",.72));material.set_shader_parameter("tint",prefs.get("glass_tint",.3));material.set_shader_parameter("frost",prefs.get("glass_blur",.75))
 	# Contrast underlay adapts to opacity without sampling desktop pixels.
 	central.add_theme_stylebox_override("panel",owner_view.box(Color(.97,.985,1,lerpf(.80,.56,float(prefs.get("glass_opacity",.72)))),6,14))
 	if window.visible:window.always_on_top=prefs.topmost;apply_native()
@@ -207,13 +207,13 @@ func refresh(force:bool=false) -> void:
 		var row:Dictionary=messages[displayed_indices[index]];var card:Dictionary=cards[index]
 		if card.text!=row.text:card.label.text=Markdown.render(row.text).bbcode if row.role=="assistant" else Markdown.literal(row.text);card.text=row.text
 		card.state.text={"streaming":"Replying…","cancelled":"Stopped · partial answer","error":"Error · partial answer"}.get(row.state,"");card.state.visible=not card.state.text.is_empty()
-	scroll.visible=not cards.is_empty();composer.visible=not controller.busy();composer.placeholder_text="Ask again…" if scroll.visible else "Ask your fox…"
+	scroll.visible=not cards.is_empty();composer.visible=not controller.busy();composer.placeholder_text="Ask again…" if scroll.visible else "Ask your pet…"
 	if scroll.visible:set_answer_height()
 	_field_layout();layout_serial+=1;_finish_layout.call_deferred(layout_serial)
 	max_render_ms=maxf(max_render_ms,float(Time.get_ticks_usec()-start)/1000.0)
 func _card(role:String) -> Dictionary:
 	var column:=VBoxContainer.new();column.add_theme_constant_override("separation",1);transcript.add_child(column)
-	var who:=Label.new();who.text="Fox" if role=="assistant" else "You";who.add_theme_font_size_override("font_size",11);who.add_theme_color_override("font_color",owner_view.MUTED);column.add_child(who)
+	var who:=Label.new();who.text="Pet" if role=="assistant" else "You";who.add_theme_font_size_override("font_size",11);who.add_theme_color_override("font_color",owner_view.MUTED);column.add_child(who)
 	var label:=RichTextLabel.new();label.bbcode_enabled=true;label.fit_content=true;label.scroll_active=false;label.selection_enabled=true;label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;label.add_theme_color_override("default_color",owner_view.NAVY);label.add_theme_font_size_override("normal_font_size",14);label.add_theme_font_size_override("bold_font_size",14);column.add_child(label)
 	var mono:=SystemFont.new();mono.font_names=PackedStringArray(["Consolas"]);label.add_theme_font_override("mono_font",mono);label.add_theme_font_size_override("mono_font_size",12)
 	var state:=Label.new();state.add_theme_font_size_override("font_size",11);state.add_theme_color_override("font_color",owner_view.MUTED);column.add_child(state)

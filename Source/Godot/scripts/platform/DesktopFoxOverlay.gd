@@ -100,7 +100,7 @@ func _ready() -> void:
 	var claimed:int=FoxWindowBridge.acquire_instance("--t13-validation" in OS.get_cmdline_user_args())
 	if claimed!=1:
 		set_process(false);set_process_input(false)
-		if claimed<0:push_error("Cannot secure the Desktop Fox instance (%s). Startup stopped safely."%claimed)
+		if claimed<0:push_error("Cannot secure the Desktop Pet instance (%s). Startup stopped safely."%claimed)
 		get_tree().quit(0 if claimed==0 else 1);return
 	instance_acquired=true
 	# Optional T20 profile is calibrated for this host, not a universal index.
@@ -155,24 +155,24 @@ func _ready() -> void:
 	if not FileAccess.file_exists(local_audio.settings.PATH) and local_audio.settings.save_local()!=OK:push_error("Could not save initial sound preferences.")
 	home_behavior.initialize(Time.get_ticks_usec(),Vector2(pet.position))
 	if not t11_test and not t10_test and not t09_test and not desktop_test and home_behavior.save_local()!=OK:push_error("Could not save home activity settings in the Windows user-data folder.")
-	pet.title = "Desktop Fox"
-	panel.title = "Desktop Fox — controls"
+	pet.title = "Desktop Pet"
+	panel.title = "Desktop Pet — controls"
 	if "--t09-review" in OS.get_cmdline_user_args():
-		pet.title="Desktop Fox — T09 candidate"
-		panel.title="Desktop Fox — T09 controls"
+		pet.title="Desktop Pet — T09 candidate"
+		panel.title="Desktop Pet — T09 controls"
 	if "--t10-review" in OS.get_cmdline_user_args():
-		pet.title="Desktop Fox — T10 candidate"
-		panel.title="Desktop Fox — T10 controls"
+		pet.title="Desktop Pet — T10 candidate"
+		panel.title="Desktop Pet — T10 controls"
 	if "--t11-review" in OS.get_cmdline_user_args():
-		pet.title="Desktop Fox — T11 candidate"
-		panel.title="Desktop Fox — T11 controls"
+		pet.title="Desktop Pet — T11 candidate"
+		panel.title="Desktop Pet — T11 controls"
 	if "--t12-review" in OS.get_cmdline_user_args():
-		pet.title="Desktop Fox — T12 candidate"
-		panel.title="Desktop Fox — T12 controls"
+		pet.title="Desktop Pet — T12 candidate"
+		panel.title="Desktop Pet — T12 controls"
 		open_panel()
 		_show_audio_controls.call_deferred()
 	if "--t13-review" in OS.get_cmdline_user_args():
-		pet.title="Desktop Fox — T13 candidate";panel.title="Desktop Fox — T13 controls"
+		pet.title="Desktop Pet — T13 candidate";panel.title="Desktop Pet — T13 controls"
 		open_panel();show_preferences.call_deferred()
 	if t11_test:
 		t11_harness=load(preload("res://scripts/Paths.gd").development_root().path_join("Tests/Godot/test_home_desktop.gd")).new()
@@ -217,7 +217,7 @@ func _ready() -> void:
 		t15_harness=load(preload("res://scripts/Paths.gd").development_root().path_join("Validation/T15/iteration-5/test_windows.gd")).new()
 		t15_harness.run.call_deferred(self)
 	if "--t15-review" in OS.get_cmdline_user_args():
-		pet.title="Desktop Fox — T15 candidate";chat_view.open_chat()
+		pet.title="Desktop Pet — T15 candidate";chat_view.open_chat()
 	if OS.has_feature("debug") and "--t15-proof" in OS.get_cmdline_user_args():
 		t15_harness=load(preload("res://scripts/Paths.gd").development_root().path_join("Validation/T15/iteration-1/test_desktop.gd")).new()
 		t15_harness.run.call_deferred(self)
@@ -240,12 +240,12 @@ func _ready() -> void:
 		t15_harness=load(preload("res://scripts/Paths.gd").development_root().path_join("Validation/T15/iteration-3/benchmark.gd")).new()
 		t15_harness.run.call_deferred(self)
 	if "--t16-review" in OS.get_cmdline_user_args():
-		pet.title="Desktop Fox — T16 candidate";chat_view.open_chat()
+		pet.title="Desktop Pet — T16 candidate";chat_view.open_chat()
 	if OS.has_feature("debug") and "--t16-package-proof" in OS.get_cmdline_user_args():
 		t15_harness=load(preload("res://scripts/Paths.gd").development_root().path_join("Validation/T16/iteration-1/test_desktop.gd")).new()
 		t15_harness.run.call_deferred(self)
 	if "--chat-ui-review" in OS.get_cmdline_user_args():
-		pet.title="Desktop Fox — chat correction";chat_view.open_chat()
+		pet.title="Desktop Pet — chat correction";chat_view.open_chat()
 	if OS.has_feature("debug") and "--chat-ui-proof" in OS.get_cmdline_user_args():
 		t15_harness=load(preload("res://scripts/Paths.gd").development_root().path_join("Validation/T15/iteration-4/test_desktop.gd")).new()
 		t15_harness.run.call_deferred(self)
@@ -437,12 +437,12 @@ func _create_panel() -> void:
 	draft.placeholder_text = "Write a note here. Closing controls keeps your draft."
 	for control in column.get_children():
 		if control is Label or control is Button:
-			control.text = control.text.replace("placeholder","pet").replace("prototype","Desktop Fox")
+			control.text = control.text.replace("placeholder","pet").replace("prototype","Desktop Pet")
 	var size_row := column.get_child(7) as HBoxContainer
 	if size_row and size_row.get_child(0) is Label: size_row.get_child(0).text = "Pet size:"
 	var footer := column.get_child(column.get_child_count()-1) as Label
 	if footer: footer.text = "Use the tray to show your pet or restore clicks."
-	(column.get_child(0) as Label).text = "Desktop Fox"
+	(column.get_child(0) as Label).text = "Desktop Pet"
 	panel.size = Vector2i(470,700)
 	var sensitivity := HBoxContainer.new()
 	column.add_child(sensitivity)
@@ -457,11 +457,11 @@ func _create_panel() -> void:
 		var error := input_settings.save_local()
 		if error!=OK: push_error("Could not save cursor sensitivity."))
 	var hover_help := Label.new()
-	hover_help.text="Move the cursor nearby to let your fox look around."
+	hover_help.text="Move the cursor nearby to let your pet look around."
 	hover_help.add_theme_font_size_override("font_size",13)
 	column.add_child(hover_help)
 	var drag_help := Label.new()
-	drag_help.text="Hold 1 second, then move far enough to lead your fox."
+	drag_help.text="Hold 1 second, then move far enough to lead your pet."
 	drag_help.add_theme_font_size_override("font_size",13)
 	column.add_child(drag_help)
 	var follow_title:=Label.new();follow_title.text="Follow movement";column.add_child(follow_title)
@@ -492,7 +492,7 @@ func _create_panel() -> void:
 		home_behavior.interact())
 	_button(column,"Sleep / Wake",func():_menu_action("sleep"))
 	var quiet_help:=Label.new();quiet_help.text="3 minutes with the cursor away: run toward the nearest corner, then walk the last short distance and lie down.
-5 further minutes lying: sleep. Cursor proximity wakes your fox and resets both timers.
+5 further minutes lying: sleep. Cursor proximity wakes your pet and resets both timers.
 Idle gestures Off and Stay Here do not disable this rest routine. No random roaming."
 	quiet_help.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	quiet_help.add_theme_font_size_override("font_size",13);column.add_child(quiet_help)
@@ -541,7 +541,7 @@ func preview_preferences(candidate:Dictionary) -> void:
 	_place_pet(false)
 	if not eye_palette.apply(preference_preview.eye_color) and preference_preview.eye_color!="Original":
 		if preferences_controls:preferences_controls.status.text="Eye color preview unavailable; use Original."
-	if tray_id>=0:DisplayServer.status_indicator_set_tooltip(tray_id,preference_preview.pet_name+" — Desktop Fox: right-click for controls")
+	if tray_id>=0:DisplayServer.status_indicator_set_tooltip(tray_id,preference_preview.pet_name+" — Desktop Pet: right-click for controls")
 	if not preference_preview.fullscreen_pause:
 		fullscreen_policy.observe(0,false)
 		if director.full_screen:director.set_lifecycle(director.hidden,false)
@@ -566,7 +566,7 @@ func _create_tray() -> void:
 	if menu.is_valid():
 		for index in NativeMenu.get_item_count(menu):
 			NativeMenu.set_item_text(menu,index,NativeMenu.get_item_text(menu,index).replace("placeholder","pet").replace("Chat / controls","Chat"))
-	if tray_id >= 0: DisplayServer.status_indicator_set_tooltip(tray_id,"Desktop Fox — right-click for controls")
+	if tray_id >= 0: DisplayServer.status_indicator_set_tooltip(tray_id,"Desktop Pet — right-click for controls")
 	if not context_popup:
 		context_popup=preload("res://scripts/interaction/FoxQuickMenu.gd").new()
 		add_child(context_popup)
@@ -578,7 +578,7 @@ func recover_tray() -> void:
 	if tray_id>=0:DisplayServer.delete_status_indicator(tray_id);tray_id=-1
 	if menu.is_valid():NativeMenu.free_menu(menu);menu=RID()
 	_create_tray()
-	if tray_id>=0:DisplayServer.status_indicator_set_tooltip(tray_id,preference_preview.pet_name+" — Desktop Fox: right-click for controls")
+	if tray_id>=0:DisplayServer.status_indicator_set_tooltip(tray_id,preference_preview.pet_name+" — Desktop Pet: right-click for controls")
 	else:
 		# A failed tray rebuild cannot strand a hidden/click-through overlay.
 		_set_pass_through(false);_show_pet();open_panel()
@@ -974,7 +974,7 @@ func _tick_home(delta: float) -> void:
 
 func _update_summary() -> void:
 	if summary and director:
-		summary.text = "%s · %s · Click-through %s\nUse the tray to show, hide or wake your fox." % [preference_preview.pet_name,director.posture().capitalize(),"ON" if full_passthrough else "OFF"]
+		summary.text = "%s · %s · Click-through %s\nUse the tray to show, hide or wake your pet." % [preference_preview.pet_name,director.posture().capitalize(),"ON" if full_passthrough else "OFF"]
 
 func _event(kind: String, details: Dictionary = {}) -> void:
 	details["event"] = kind

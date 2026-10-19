@@ -92,6 +92,6 @@ done:
         for(unsigned j=0;j<BUNDLE_COUNT;j++)if(join(path,dir,bundle[j].name)&&setup_hash(path,hash)&&!wcscmp(hash,bundle[j].hash))DeleteFileW(path);
         if(!deferred)RemoveDirectoryW(dir); /* Empty only; changed/unknown files kept. */
     }
-    if(code && !verify)MessageBoxW(NULL,L"Setup could not verify or start its components. Keep the complete original file, check free space and retry. Your saved data was not removed.",L"Desktop Fox Setup",MB_OK|MB_ICONERROR);
+    if(code && !verify)MessageBoxW(NULL,L"Setup could not verify or start its components. Keep the complete original file, check free space and retry. Your saved data was not removed.",L"Desktop Pet Setup",MB_OK|MB_ICONERROR);
     return code;
 }

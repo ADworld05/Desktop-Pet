@@ -10,7 +10,7 @@ var item_count:int:
 var native_status:=0
 var observer_status:=0
 func initialize(app:Node)->void:
- host=app;visible=false;title="Desktop Fox — Quick Menu";force_native=true;borderless=true;transparent=true;transparent_bg=true;transient=false;unresizable=true
+ host=app;visible=false;title="Desktop Pet — Quick Menu";force_native=true;borderless=true;transparent=true;transparent_bg=true;transient=false;unresizable=true
  content_scale_mode=Window.CONTENT_SCALE_MODE_DISABLED;content_scale_size=Vector2i.ZERO;content_scale_factor=1
  var glass:=ColorRect.new();glass.mouse_filter=Control.MOUSE_FILTER_IGNORE;glass.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);add_child(glass)
  material=ShaderMaterial.new();material.shader=preload("res://scripts/chat/compact_glass.gdshader");glass.material=material

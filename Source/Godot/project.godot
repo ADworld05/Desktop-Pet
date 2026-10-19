@@ -1,8 +1,8 @@
-; Desktop Fox — T08 actual actor and animation director.
+; Desktop Pet — T08 actual actor and animation director.
 config_version=5
 
 [application]
-config/name="Desktop Fox Assistant"
+config/name="Desktop Pet Assistant"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="DesktopFox"
 run/main_scene="res://scenes/DesktopFox.tscn"

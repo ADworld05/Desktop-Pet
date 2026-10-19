@@ -40,8 +40,8 @@ static func prepare_runtime() -> Error:
 	var probe := directory("cache").path_join("write-check-" + Crypto.new().generate_random_bytes(12).hex_encode())
 	var file := FileAccess.open(probe, FileAccess.WRITE)
 	if file == null: return FileAccess.get_open_error()
-	file.store_string("Desktop Fox write check"); file.close()
-	var readable := FileAccess.get_file_as_string(probe) == "Desktop Fox write check"
+	file.store_string("Desktop Pet write check"); file.close()
+	var readable := FileAccess.get_file_as_string(probe) == "Desktop Pet write check"
 	var removed := DirAccess.remove_absolute(probe)
 	return OK if readable and removed == OK else ERR_FILE_CANT_WRITE
 

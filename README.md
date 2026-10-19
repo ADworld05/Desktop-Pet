@@ -1,18 +1,18 @@
-# Desktop Fox
+# Desktop Pet
 
 **An animated local-AI desktop companion for Windows.**
 
 [Getting started](#getting-started) · [Interactions](#interactions) · [Local AI](#local-ai-and-models) · [Privacy](#data-and-privacy) · [Development](#building-and-contributing)
 
-<p align="center"><img src="docs/images/desktop-fox.png" width="280" alt="Desktop Fox, the animated brown fox companion"></p>
+<p align="center"><img src="docs/images/desktop-fox.png" width="280" alt="Desktop Pet, the animated brown fox companion"></p>
 
-Desktop Fox began with a simple idea: a virtual pet should live on the desktop, rather than remain inside a normal application window. The fox watches nearby cursor movements, follows when invited, settles down to rest, and opens a small chat interface when you need it.
+Desktop Pet began with a simple idea: a virtual pet should live on the desktop, rather than remain inside a normal application window. The fox watches nearby cursor movements, follows when invited, settles down to rest, and opens a small chat interface when you need it.
 
 It combines an animated desktop pet, mouse interactions, local AI chat, persistent conversations, explicit long-term memory and permission-controlled Windows actions. **The pet works without AI. Chat requires Ollama and at least one compatible local model.**
 
 Created and maintained by **Abir Dutta** ([ADworld05](https://github.com/ADworld05)). Original project code is MIT licensed; the fox model and other dependencies retain their own licenses.
 
-> **Status:** the current build is an unsigned Windows x64 release candidate, `1.0.0-rc.5`. Public release assets and source publication are being prepared. Check [Releases](https://github.com/ADworld05/Desktop-Pet/releases) for availability; a downloadable package may not yet be published. A tested portable-source build command is provided; the installer pipeline still needs portability work—see [BUILDING.md](BUILDING.md).
+> **Status:** the current build is an unsigned Windows x64 release candidate, `1.0.0-rc.6`. Public release assets and source publication are being prepared. Check [Releases](https://github.com/ADworld05/Desktop-Pet/releases) for availability; a downloadable package may not yet be published. Portable and standalone-setup source build commands are provided; the manual CI draft has not run remotely—see [BUILDING.md](BUILDING.md).
 
 ## Contents
 
@@ -96,7 +96,7 @@ The popup sits beside the fox and is clamped to the usable screen area. Nominal 
 
 ![Full chat with synthetic conversation data](docs/images/full-chat.png)
 
-Expand retains the current conversation in **Desktop Fox — Chat**. The larger interface provides a chronological scrollable transcript, input at the bottom, model selection, Past chats, Memory, Settings and Local AI. It supports dragging, minimizing, restoring and closing.
+Expand retains the current conversation in **Desktop Pet — Chat**. The larger interface provides a chronological scrollable transcript, input at the bottom, model selection, Past chats, Memory, Settings and Local AI. It supports dragging, minimizing, restoring and closing.
 
 Closing chat does not exit the pet. Relaunching the pet starts a fresh conversation while retaining saved chats and memory. New Chat also starts a fresh conversation during a session.
 
@@ -112,22 +112,22 @@ When packages are available, open [GitHub Releases](https://github.com/ADworld05
 
 ### Installer
 
-1. Download **DesktopFox_Setup.exe**.
+1. Download **DesktopPet_Setup.exe**.
 2. Exit any running fox through its menu/tray **Exit** action.
 3. Run setup and choose **Install / Update**.
 4. Enable optional Desktop, Start-menu or sign-in shortcuts only if wanted.
-5. Choose **Open installed fox**.
+5. Choose **Open installed pet**.
 
 Default installation is current-user `%LOCALAPPDATA%\Programs\DesktopFox`, without administrator access. Setup does not silently install Ollama or models.
 
 ### Portable archive
 
-1. Download **DesktopFox_Portable.zip**.
+1. Download **DesktopPet_Portable.zip**.
 2. Extract the complete archive.
-3. Keep all files in the extracted `DesktopFox` folder together.
+3. Keep all files in the extracted `DesktopPet` folder together.
 4. Run **DesktopPet.exe**.
 
-`DesktopPet.exe` is the launcher; `DesktopFox.exe` is the engine. Do not move just one executable. Portable program files can move, but saved data still uses the Windows user profile.
+`DesktopPet.exe` is the launcher; `DesktopFox.exe` is the internal engine. Compatibility filenames and data folders retain their old names; visible product labels use Desktop Pet. Do not move just one executable. Portable program files can move, but saved data still uses the Windows user profile.
 
 ### First launch
 
@@ -150,9 +150,9 @@ ollama pull qwen3:1.7b
 ollama list
 ```
 
-Refresh Desktop Fox afterwards. These are terminal commands, not fox chat prompts. See the [Ollama CLI reference](https://docs.ollama.com/cli).
+Refresh Desktop Pet afterwards. These are terminal commands, not fox chat prompts. See the [Ollama CLI reference](https://docs.ollama.com/cli).
 
-Internet is normally needed to acquire Ollama/model weights. Once supported weights are local, normal inference uses the local Ollama service without a cloud LLM service or cloud API key. Desktop Fox does not automatically fall back to cloud inference.
+Internet is normally needed to acquire Ollama/model weights. Once supported weights are local, normal inference uses the local Ollama service without a cloud LLM service or cloud API key. Desktop Pet does not automatically fall back to cloud inference.
 
 ### Model choices
 
@@ -184,7 +184,7 @@ Compatibility depends on runtime support, capabilities and verifiable local weig
 - Stored notes can be supplied as context for later answers, without a guarantee of perfect recall on every prompt.
 - Export/recovery-copy cleanup is separate from active-note deletion.
 
-Chats and memory are local files. **Desktop Fox does not encrypt them.** Protect backups/exports if they contain sensitive information.
+Chats and memory are local files. **Desktop Pet does not encrypt them.** Protect backups/exports if they contain sensitive information.
 
 ## Windows actions and permissions
 
@@ -192,7 +192,7 @@ The fixed structured-action set includes opening approved applications/files/fol
 
 Allowed folders/applications are configured explicitly. Schema, path and scope checks precede execution, with action review and confirmations where required. An AI suggestion cannot grant itself access. Browsing a file for memory import does not grant ongoing folder permission.
 
-Desktop Fox does **not** have unrestricted access, arbitrary shell execution, privilege elevation or a security-bypass mechanism. This is a restricted structured-action layer, not a general autonomous desktop agent.
+Desktop Pet does **not** have unrestricted access, arbitrary shell execution, privilege elevation or a security-bypass mechanism. This is a restricted structured-action layer, not a general autonomous desktop agent.
 
 ## Customization
 
@@ -278,7 +278,7 @@ This describes the prepared source package, not a promise that all source files 
 
 End users should use release packages. Developers need **Godot 4.7.2 Standard and matching Windows export templates**, a Windows C/MinGW toolchain and required project assets. Blender **4.5.9 LTS** is relevant for asset-authoring changes, not running the pet. Existing packaging utilities also use Python.
 
-The portable application has a tested build entry point using existing Godot/MinGW tools. Run `python scripts/check_source.py`, then follow [BUILDING.md](BUILDING.md). A portable installer build pipeline and automated CI are still pending; no complete one-command installer build is promised.
+The portable application has a tested build entry point using existing Godot/MinGW tools. Run `python scripts/check_source.py`, then follow [BUILDING.md](BUILDING.md). Use `--installer` to also assemble and extraction-verify the standalone setup. A manual-only self-hosted Windows CI draft is included, but has not been run remotely. Interactive candidate install/update/uninstall review remains separate.
 
 Contributions are welcome for portable builds/CI, compatibility testing, accessibility, documentation and measured performance improvements. Report Windows/app/model/runtime versions and reproduction steps. Redact chats, private paths and memory; never upload credentials or signing keys.
 

@@ -1,6 +1,6 @@
 config_version=5
 [application]
-config/name="Desktop Fox Setup"
+config/name="Desktop Pet Setup"
 run/main_scene="res://Setup.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 [display]

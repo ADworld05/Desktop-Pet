@@ -28,7 +28,7 @@ static int64_t window_state(int64_t id) {
     ptrcall(native_method,display,args,&result);
     HWND window=(HWND)(intptr_t)result;DWORD pid=0;
     DWORD thread=GetWindowThreadProcessId(window,&pid);WCHAR title[80]={0};GetWindowTextW(window,title,80);
-    if (!IsWindow(window) || pid!=GetCurrentProcessId() || thread!=GetCurrentThreadId() || GetAncestor(window,GA_ROOT)!=window || wcscmp(title,L"Desktop Fox \x2014 Chat") || !IsWindowVisible(window)) return 0;
+    if (!IsWindow(window) || pid!=GetCurrentProcessId() || thread!=GetCurrentThreadId() || GetAncestor(window,GA_ROOT)!=window || wcscmp(title,L"Desktop Pet \x2014 Chat") || !IsWindowVisible(window)) return 0;
     LONG_PTR style=GetWindowLongPtrW(window,GWL_STYLE);int64_t state=1;
     int primary=GetSystemMetrics(SM_SWAPBUTTON)?VK_RBUTTON:VK_LBUTTON;
     if (GetAsyncKeyState(primary)&0x8000) state|=2;

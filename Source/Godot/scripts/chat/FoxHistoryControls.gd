@@ -6,7 +6,7 @@ var sessions:SpinBox
 var megabytes:SpinBox
 var notice:Label
 func initialize(owner_view:Node) -> void:
-	view=owner_view;window=Window.new();window.title="Desktop Fox — History storage";window.size=Vector2i(500,480);window.min_size=Vector2i(480,440);window.visible=false;window.force_native=true;window.borderless=false;window.transient=false;window.popup_window=false;window.minimize_disabled=false;window.theme=view.window.theme;add_child(window);window.close_requested.connect(window.hide)
+	view=owner_view;window=Window.new();window.title="Desktop Pet — History storage";window.size=Vector2i(500,480);window.min_size=Vector2i(480,440);window.visible=false;window.force_native=true;window.borderless=false;window.transient=false;window.popup_window=false;window.minimize_disabled=false;window.theme=view.window.theme;add_child(window);window.close_requested.connect(window.hide)
 	var panel:=PanelContainer.new();panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);panel.add_theme_stylebox_override("panel",view.box(Color("#f0f5fa"),16));window.add_child(panel)
 	var column:=VBoxContainer.new();column.add_theme_constant_override("separation",10);panel.add_child(column)
 	var header:=HBoxContainer.new();column.add_child(header);var title:=Label.new();title.text="Saved chats";title.size_flags_horizontal=Control.SIZE_EXPAND_FILL;title.add_theme_font_size_override("font_size",20);header.add_child(title);view.drag_handle(title,window)

@@ -17,7 +17,7 @@ static func missing_assets()->Array[String]:
 	return missing
 
 func run(host:Node)->void:
-	window=Window.new();window.visible=false;window.title="Desktop Fox — First launch";window.size=Vector2i(540,520);window.min_size=Vector2i(320,300);window.force_native=true;window.transient=false;window.minimize_disabled=false;window.keep_title_visible=true
+	window=Window.new();window.visible=false;window.title="Desktop Pet — First launch";window.size=Vector2i(540,520);window.min_size=Vector2i(320,300);window.force_native=true;window.transient=false;window.minimize_disabled=false;window.keep_title_visible=true
 	host.add_child(window)
 	var theme:=Theme.new();theme.default_font_size=16
 	for type in ["Label","Button"]:theme.set_color("font_color",type,Color("24384e"))
@@ -29,7 +29,7 @@ func run(host:Node)->void:
 	var outer:=VBoxContainer.new();outer.add_theme_constant_override("separation",12);panel.add_child(outer)
 	var scroll:=ScrollContainer.new();scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL;scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;outer.add_child(scroll)
 	var column:=VBoxContainer.new();column.size_flags_horizontal=Control.SIZE_EXPAND_FILL;column.add_theme_constant_override("separation",12);scroll.add_child(column)
-	var title:=Label.new();title.text="Welcome to Desktop Fox";title.add_theme_font_size_override("font_size",22);column.add_child(title)
+	var title:=Label.new();title.text="Welcome to Desktop Pet";title.add_theme_font_size_override("font_size",22);column.add_child(title)
 	status=Label.new();status.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;status.size_flags_vertical=Control.SIZE_EXPAND_FILL;column.add_child(status)
 	var discovery:=preload("res://scripts/chat/FoxOllamaDiscovery.gd").inspect()
 	var assets:=missing_assets()

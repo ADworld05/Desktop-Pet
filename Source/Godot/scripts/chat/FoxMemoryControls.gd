@@ -13,7 +13,7 @@ var pending:Callable
 var import_button:Button
 var reviewed_format:=-1
 func initialize(owner:Node) -> void:
-	view=owner;window=Window.new();window.title="Desktop Fox - Memory";window.size=Vector2i(570,680);window.min_size=Vector2i(500,580);window.visible=false;window.force_native=true;window.borderless=false;window.transient=false;window.minimize_disabled=false;window.theme=view.window.theme;add_child(window);window.close_requested.connect(window.hide)
+	view=owner;window=Window.new();window.title="Desktop Pet - Memory";window.size=Vector2i(570,680);window.min_size=Vector2i(500,580);window.visible=false;window.force_native=true;window.borderless=false;window.transient=false;window.minimize_disabled=false;window.theme=view.window.theme;add_child(window);window.close_requested.connect(window.hide)
 	var panel:=PanelContainer.new();panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);panel.add_theme_stylebox_override("panel",view.box(Color("#f0f5fa"),16));window.add_child(panel)
 	var scroll:=ScrollContainer.new();scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;panel.add_child(scroll)
 	var column:=VBoxContainer.new();column.size_flags_horizontal=Control.SIZE_EXPAND_FILL;column.size_flags_vertical=Control.SIZE_EXPAND_FILL;column.add_theme_constant_override("separation",8);scroll.add_child(column)

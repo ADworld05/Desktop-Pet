@@ -102,7 +102,7 @@ func initialize(owner:Node) -> void:
 	if controller.history_store!=null:
 		controller.memory_store=MemoryStore.new(preload("res://scripts/Paths.gd").development_root().path_join("Validation/T17/iteration-2/ui-memory/memory.json")) if "--t17-validation" in OS.get_cmdline_user_args() else MemoryStore.new()
 		controller.memory_store.open()
-	window=Window.new();window.name="ChatWindow";window.title="Desktop Fox — Chat";window.size=Vector2i(720,700);window.min_size=Vector2i(680,500);window.visible=false;window.transparent=true;window.transparent_bg=true;window.force_native=true;window.unfocusable=false;window.borderless=false;window.transient=false;window.popup_window=false;window.unresizable=false;window.minimize_disabled=false;window.maximize_disabled=false;window.keep_title_visible=true;window.always_on_top=false
+	window=Window.new();window.name="ChatWindow";window.title="Desktop Pet — Chat";window.size=Vector2i(720,700);window.min_size=Vector2i(680,500);window.visible=false;window.transparent=true;window.transparent_bg=true;window.force_native=true;window.unfocusable=false;window.borderless=false;window.transient=false;window.popup_window=false;window.unresizable=false;window.minimize_disabled=false;window.maximize_disabled=false;window.keep_title_visible=true;window.always_on_top=false
 	add_child(window);window.close_requested.connect(close_chat)
 	mono_font=SystemFont.new();mono_font.font_names=PackedStringArray(["Consolas"])
 	var theme:=Theme.new();theme.default_font_size=16
@@ -130,7 +130,7 @@ func initialize(owner:Node) -> void:
 	data_tabs.add_theme_color_override("font_selected_color",NAVY);data_tabs.add_theme_color_override("font_unselected_color",MUTED);data_tabs.add_theme_stylebox_override("panel",box(Color(.94,.97,1,.10),8));data_tabs.add_theme_stylebox_override("tab_selected",box(Color.WHITE,8,7));data_tabs.add_theme_stylebox_override("tab_unselected",box(Color("#e4eef8"),8,7))
 	var column:=VBoxContainer.new();column.name="Chat";column.add_theme_constant_override("separation",10);data_tabs.add_child(column)
 	var caption:=HBoxContainer.new();column.add_child(caption)
-	var title:=Label.new();title.text="Fox chat";title.add_theme_font_size_override("font_size",22);title.size_flags_horizontal=Control.SIZE_EXPAND_FILL;caption.add_child(title);drag_handle(title,window)
+	var title:=Label.new();title.text="Pet chat";title.add_theme_font_size_override("font_size",22);title.size_flags_horizontal=Control.SIZE_EXPAND_FILL;caption.add_child(title);drag_handle(title,window)
 	var minimize:=button(caption,"—",minimize_chat);minimize.name="MinimizeChat";minimize.tooltip_text="Minimize chat"
 	var close:=button(caption,"×",close_chat);close.name="CloseChat";close.tooltip_text="Close chat; preserve history"
 	var header:=HBoxContainer.new();header.add_theme_constant_override("separation",6);toolbar=header;column.add_child(header)
@@ -170,7 +170,7 @@ func initialize(owner:Node) -> void:
 		if follow_latest:_bottom.call_deferred())
 	scroll.gui_input.connect(_scroll_input);scroll.gui_input.connect(_wheel_scroll);scroll.get_v_scroll_bar().gui_input.connect(_scroll_input)
 	latest=button(column,"Jump to latest",jump_latest);latest.name="JumpLatest";latest.visible=false
-	composer=TextEdit.new();composer.name="ChatDraft";composer.placeholder_text="Ask your fox…";composer.custom_minimum_size.y=64;composer.scroll_fit_content_height=false;composer.scroll_fit_content_width=false;composer.wrap_mode=TextEdit.LINE_WRAPPING_BOUNDARY;composer.text_changed.connect(_draft_changed);composer.gui_input.connect(_composer_input);column.add_child(composer)
+	composer=TextEdit.new();composer.name="ChatDraft";composer.placeholder_text="Ask your pet…";composer.custom_minimum_size.y=64;composer.scroll_fit_content_height=false;composer.scroll_fit_content_width=false;composer.wrap_mode=TextEdit.LINE_WRAPPING_BOUNDARY;composer.text_changed.connect(_draft_changed);composer.gui_input.connect(_composer_input);column.add_child(composer)
 	var actions:=HBoxContainer.new();actions.add_theme_constant_override("separation",8);column.add_child(actions)
 	var help:=Label.new();help.text="Enter sends · Shift+Enter adds a line";help.add_theme_font_size_override("font_size",12);help.add_theme_color_override("font_color",MUTED);help.size_flags_horizontal=Control.SIZE_EXPAND_FILL;actions.add_child(help)
 	retry_button=button(actions,"Retry",func():controller.retry(scenario.get_item_text(scenario.selected)));retry_button.name="Retry";retry_button.visible=false
@@ -193,12 +193,12 @@ func _make_bubble(theme:Theme) -> void:
 	var panel:=PanelContainer.new();panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);panel.add_theme_stylebox_override("panel",box(Color("#f6faff"),14,14));bubble.add_child(panel)
 	var column:=VBoxContainer.new();column.add_theme_constant_override("separation",8);panel.add_child(column)
 	var row:=HBoxContainer.new();column.add_child(row)
-	var title:=Label.new();title.text="Fox";title.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(title)
+	var title:=Label.new();title.text="Pet";title.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(title)
 	button(row,"×",func():bubble_dismissed=true;bubble.hide())
 	bubble_text=Label.new();bubble_text.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;bubble_text.size_flags_vertical=Control.SIZE_EXPAND_FILL;column.add_child(bubble_text)
 	button(column,"Open chat",open_chat)
 func _process(delta:float) -> void:
-	if controller.real_provider:controller.provider.pet_name=host.preference_preview.get("pet_name","Fox")
+	if controller.real_provider:controller.provider.pet_name=host.preference_preview.get("pet_name","Pet")
 	controller.advance(delta)
 	var showing:bool=window.visible and window.mode!=Window.MODE_MINIMIZED
 	if showing and not full_presentation_active:refresh()
@@ -322,7 +322,7 @@ func refresh() -> void:
 		for child in transcript.get_children():child.free()
 		cards.clear();rendered_session=controller.session().id;follow_latest=true
 	if messages.is_empty() and transcript.get_child_count()==0:
-		var welcome:=Label.new();welcome.name="Welcome";welcome.text="Ask your fox anything.";welcome.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;welcome.add_theme_color_override("font_color",MUTED);transcript.add_child(welcome)
+		var welcome:=Label.new();welcome.name="Welcome";welcome.text="Ask your pet anything.";welcome.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;welcome.add_theme_color_override("font_color",MUTED);transcript.add_child(welcome)
 	elif not messages.is_empty() and transcript.has_node("Welcome"):transcript.get_node("Welcome").free()
 	rendering=true;layout_serial+=1
 	for index in messages.size():

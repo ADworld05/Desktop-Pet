@@ -1,6 +1,6 @@
-# Desktop Fox credits
+# Desktop Pet credits
 
-Desktop Fox is a project created and maintained by **Abir Dutta** (GitHub: **ADworld05**).
+Desktop Pet is a project created and maintained by **Abir Dutta** (GitHub: **ADworld05**).
 
 Repository: https://github.com/ADworld05/Desktop-Pet
 

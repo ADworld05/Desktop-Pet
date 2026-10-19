@@ -30,7 +30,7 @@ func initialize(host:Node) -> void:
 		button.pressed.connect(button_action.bind(entry[1]))
 	status=Label.new();status.name="PreferenceStatus";status.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;status.add_theme_font_size_override("font_size",13);add_child(status)
 	var help:=Label.new();help.text="Preview these preferences, then Apply. Closing restores unsaved changes.\nMovement and Sound tabs save immediately.";help.add_theme_font_size_override("font_size",13);help.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;add_child(help)
-	startup_toggle=CheckBox.new();startup_toggle.text="Start Desktop Fox when I sign in (this user)";add_child(startup_toggle)
+	startup_toggle=CheckBox.new();startup_toggle.text="Start Desktop Pet when I sign in (this user)";add_child(startup_toggle)
 	startup_status=Label.new();startup_status.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;startup_status.add_theme_font_size_override("font_size",13);add_child(startup_status)
 	startup_toggle.toggled.connect(set_startup)
 	refresh_startup()
@@ -79,7 +79,7 @@ func refresh_startup() -> void:
 	startup_toggle.set_pressed_no_signal(result.enabled)
 	startup_toggle.disabled=not result.available or result.get("conflict",false)
 	var explanation:String=str(result.get("error",""))
-	if explanation.is_empty():explanation="A different Desktop Fox shortcut is preserved."
+	if explanation.is_empty():explanation="A different Desktop Pet shortcut is preserved."
 	startup_status.text="Startup is %s. This switch applies immediately, with your consent. No administrator access is used."%("On" if result.enabled else "Off") if result.available and not result.get("conflict",false) else "Startup unavailable: "+explanation
 
 func set_startup(enabled:bool) -> void:

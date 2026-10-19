@@ -1,8 +1,8 @@
 #include <windows.h>
 1 RT_MANIFEST "fox_setup_bootstrap.manifest"
 1 VERSIONINFO
-FILEVERSION 1,0,0,5
-PRODUCTVERSION 1,0,0,5
+FILEVERSION 1,0,0,6
+PRODUCTVERSION 1,0,0,6
 FILEFLAGSMASK 0x3fL
 FILEFLAGS 0
 FILEOS VOS_NT_WINDOWS32
@@ -12,11 +12,11 @@ BEGIN
  BEGIN
   BLOCK "040904b0"
   BEGIN
-   VALUE "FileDescription", "Desktop Fox Setup"
-   VALUE "FileVersion", "1.0.0.5"
-   VALUE "ProductName", "Desktop Fox"
-   VALUE "ProductVersion", "1.0.0-rc.5"
-   VALUE "OriginalFilename", "DesktopFox_Setup.exe"
+   VALUE "FileDescription", "Desktop Pet Setup"
+   VALUE "FileVersion", "1.0.0.6"
+   VALUE "ProductName", "Desktop Pet"
+   VALUE "ProductVersion", "1.0.0-rc.6"
+   VALUE "OriginalFilename", "DesktopPet_Setup.exe"
   END
  END
  BLOCK "VarFileInfo"

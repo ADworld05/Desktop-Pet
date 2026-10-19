@@ -47,7 +47,7 @@ int wmain(int count, WCHAR **args) {
         if (SUCCEEDED(error)) error = IShellLinkW_SetPath(link, launcher);
         if (SUCCEEDED(error)) error = IShellLinkW_SetArguments(link, L"");
         if (SUCCEEDED(error)) error = IShellLinkW_SetWorkingDirectory(link, folder);
-        if (SUCCEEDED(error)) error = IShellLinkW_SetDescription(link, L"Start Desktop Fox locally at sign-in. Disable in Desktop Fox settings.");
+        if (SUCCEEDED(error)) error = IShellLinkW_SetDescription(link, L"Start Desktop Pet locally at sign-in. Disable in Desktop Pet settings.");
         if (SUCCEEDED(error)) error = IShellLinkW_SetShowCmd(link, SW_SHOWNOACTIVATE);
         if (SUCCEEDED(error)) error = IPersistFile_Save(file, path, TRUE);
         if (SUCCEEDED(error)) enabled = TRUE;

@@ -84,7 +84,7 @@ func copy_checked(source:String,dest:String,expected:String)->bool:
 func remove_checked(path:String,expected:String)->bool:
 	if not file_hash(path,expected):last_error="Changed application file kept: "+path.get_file();return false
 	var result:=DirAccess.remove_absolute(path)
-	if result!=OK:last_error="Close Desktop Fox and retry. File could not be replaced: "+path.get_file();return false
+	if result!=OK:last_error="Close Desktop Pet and retry. File could not be replaced: "+path.get_file();return false
 	return true
 func commit_staged(name:String)->bool:
 	var source:String=root+"/"+STAGE+"/"+name
@@ -176,7 +176,7 @@ func apply_shortcuts(wanted:Dictionary,previous:Dictionary)->Dictionary:
 func lock_operation()->bool:
 	if not ClassDB.class_exists("FoxWindowBridge"):last_error="Setup instance checks unavailable";return false
 	var result:int=ClassDB.class_call_static("FoxWindowBridge","acquire_instance",fixture)
-	if result!=1:last_error="Close Desktop Fox or the other setup operation, then retry.";return false
+	if result!=1:last_error="Close Desktop Pet or the other setup operation, then retry.";return false
 	return true
 func unlock_operation()->void:ClassDB.class_call_static("FoxWindowBridge","release_instance")
 func install(wanted:Dictionary)->Dictionary:
@@ -256,7 +256,7 @@ func _uninstall()->Dictionary:
 	if not guard(root):return bad(last_error)
 	if FileAccess.file_exists(root+"/"+JOURNAL):return bad("Restore the interrupted update before uninstalling")
 	var state:=installed()
-	if state.is_empty():return bad("No recognized Desktop Fox installation; nothing removed")
+	if state.is_empty():return bad("No recognized Desktop Pet installation; nothing removed")
 	for name in state.files:
 		if not file_hash(root+"/"+name,state.files[name]):return bad("Changed installed file kept; uninstall stopped: "+name)
 	var links:=apply_shortcuts({"Desktop":false,"Menu":false,"Startup":false},state.get("shortcuts",{}))

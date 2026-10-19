@@ -43,8 +43,8 @@ static int setup_maintenance(const WCHAR *action) {
     }
     if(!k && RegCreateKeyExW(HKEY_CURRENT_USER,key,0,NULL,0,KEY_READ|KEY_WRITE,NULL,&k,NULL)!=ERROR_SUCCESS)return 13;
     struct {const WCHAR *name,*value;} values[]={
-        {L"DisplayName",L"Desktop Fox"},{L"DisplayVersion",L"1.0.0-rc.5"},
-        {L"Publisher",L"Desktop Fox project"},{L"InstallLocation",root},
+        {L"DisplayName",L"Desktop Pet"},{L"DisplayVersion",L"1.0.0-rc.6"},
+        {L"Publisher",L"Desktop Pet project"},{L"InstallLocation",root},
         {L"UninstallString",command},{L"ModifyPath",modify},{L"MaintenanceSHA256",hash}
     };
     BOOL ok=TRUE;for(unsigned j=0;j<sizeof(values)/sizeof(values[0]);j++)

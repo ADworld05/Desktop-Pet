@@ -12,7 +12,7 @@ func text(parent:Node,value:String,size:int=16)->Label:
 func button(parent:Node,value:String,callback:Callable)->Button:
 	var b:=Button.new();b.text=value;b.custom_minimum_size.y=42;b.size_flags_horizontal=Control.SIZE_EXPAND_FILL;b.pressed.connect(callback);parent.add_child(b);buttons.append(b);return b
 func _ready()->void:
-	get_window().title="Desktop Fox Setup"
+	get_window().title="Desktop Pet Setup"
 	get_window().min_size=Vector2i(320,300)
 	get_window().keep_title_visible=true
 	var work:=DisplayServer.screen_get_usable_rect()
@@ -51,12 +51,12 @@ func _ready()->void:
 	add_child(margin)
 	var scroll:=ScrollContainer.new();scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL;margin.add_child(scroll)
 	var column:=VBoxContainer.new();column.size_flags_horizontal=Control.SIZE_EXPAND_FILL;column.add_theme_constant_override("separation",9);scroll.add_child(column)
-	text(column,"Desktop Fox",32);text(column,"Install, update or remove your local companion",18)
+	text(column,"Desktop Pet",32);text(column,"Install, update or remove your local companion",18)
 	var path:=PanelContainer.new();path.add_theme_stylebox_override("panel",box);column.add_child(path)
 	text(path,"Application:  "+Core.DEFAULT+"\nChats and memory: %APPDATA%/DesktopFox\nMachine settings: %LOCALAPPDATA%/DesktopFox/Config",16)
 	text(column,"Optional shortcuts",17)
 	var saved:Dictionary=core.installed().get("shortcuts",{})
-	for row in [["Desktop","Create a desktop shortcut"],["Menu","Add a Start-menu shortcut"],["Startup","Start Desktop Fox when I sign in"]]:
+	for row in [["Desktop","Create a desktop shortcut"],["Menu","Add a Start-menu shortcut"],["Startup","Start Desktop Pet when I sign in"]]:
 		var cb:=CheckBox.new();cb.text=row[1];cb.button_pressed=bool(saved.get(row[0],false));column.add_child(cb);choices[row[0]]=cb
 	text(column,"Ollama and model weights are kept where they are.\nSetup does not download models or enable online services.",14)
 	var row:=HFlowContainer.new();row.add_theme_constant_override("h_separation",10);column.add_child(row)
@@ -66,9 +66,9 @@ func _ready()->void:
 	status=RichTextLabel.new();status.custom_minimum_size.y=90;status.size_flags_vertical=Control.SIZE_EXPAND_FILL;status.bbcode_enabled=false;status.selection_enabled=true;column.add_child(status)
 	status.text="Ready. Nothing changes until you choose an action.\nUnsigned release candidate · no administrator access required."
 	var footer:=HBoxContainer.new();column.add_child(footer)
-	button(footer,"Open installed fox",launch)
+	button(footer,"Open installed pet",launch)
 	button(footer,"Close",func():get_tree().quit())
-	confirmation=ConfirmationDialog.new();confirmation.title="Confirm Desktop Fox change";confirmation.dialog_autowrap=true;confirmation.min_size=Vector2i(470,170);confirmation.theme=theme;add_child(confirmation)
+	confirmation=ConfirmationDialog.new();confirmation.title="Confirm Desktop Pet change";confirmation.dialog_autowrap=true;confirmation.min_size=Vector2i(470,170);confirmation.theme=theme;add_child(confirmation)
 	confirmation.confirmed.connect(func():begin(action))
 	get_tree().auto_accept_quit=false;get_window().close_requested.connect(func():
 		if worker:status.text="Please wait for the file operation to finish before closing."
@@ -84,8 +84,8 @@ func confirm(kind:String)->void:
 	confirmation.keep_title_visible=true
 func launch()->void:
 	var exe:=Core.DEFAULT+"/DesktopPet.exe"
-	if not FileAccess.file_exists(exe):status.text="Install Desktop Fox first.";return
-	if OS.create_process(exe,PackedStringArray(),false)<0:status.text="Could not open Desktop Fox. Check the application files."
+	if not FileAccess.file_exists(exe):status.text="Install Desktop Pet first.";return
+	if OS.create_process(exe,PackedStringArray(),false)<0:status.text="Could not open Desktop Pet. Check the application files."
 func begin(kind:String)->void:
 	if worker:return
 	action=kind;var wanted:Dictionary={}
@@ -100,7 +100,7 @@ func begin(kind:String)->void:
 			return result
 		if kind=="restore":return core.restore()
 		var result:=core.uninstall()
-		if not result.ok and str(result.reason).begins_with("No recognized Desktop Fox installation") and not FileAccess.file_exists(Core.DEFAULT+"/DesktopFox.exe"):
+		if not result.ok and str(result.reason).begins_with("No recognized Desktop Pet installation") and not FileAccess.file_exists(Core.DEFAULT+"/DesktopFox.exe"):
 			# Retry only maintenance cleanup after an already completed app removal.
 			return maintenance("Remove",{"ok":true,"reason":"Application files are already removed. Saved data was kept."})
 		return maintenance("Remove",result) if result.ok else result)
@@ -128,7 +128,7 @@ func maintenance(kind:String,result:Dictionary)->Dictionary:
 func _process(_delta:float)->void:
 	if worker and not worker.is_alive():
 		var result:Dictionary=worker.wait_to_finish();worker=null;status.text=str(result.get("reason","Operation finished"))
-		if result.has("rollback_ok") and not result.rollback_ok:status.text+="\nClose Desktop Fox, then choose Restore previous version."
+		if result.has("rollback_ok") and not result.rollback_ok:status.text+="\nClose Desktop Pet, then choose Restore previous version."
 		unlock()
 func preview()->void:
 	DirAccess.make_dir_recursive_absolute("user://SetupChecks")

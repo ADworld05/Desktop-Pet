@@ -16,7 +16,7 @@ var host_info:Label
 var host_picker:FileDialog
 var host_selection:="store"
 func initialize(owner_view:Node) -> void:
-	view=owner_view;window=Window.new();window.title="Desktop Fox — Local AI";window.size=Vector2i(540,720);window.visible=false;window.force_native=true;window.borderless=false;window.transient=false;window.popup_window=false;window.minimize_disabled=false;window.unresizable=false;window.min_size=Vector2i(540,620);window.theme=view.window.theme;add_child(window);window.close_requested.connect(window.hide)
+	view=owner_view;window=Window.new();window.title="Desktop Pet — Local AI";window.size=Vector2i(540,720);window.visible=false;window.force_native=true;window.borderless=false;window.transient=false;window.popup_window=false;window.minimize_disabled=false;window.unresizable=false;window.min_size=Vector2i(540,620);window.theme=view.window.theme;add_child(window);window.close_requested.connect(window.hide)
 	var panel:=PanelContainer.new();panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);panel.add_theme_stylebox_override("panel",view.box(Color("#f0f5fa"),16));window.add_child(panel)
 	var scroll:=ScrollContainer.new();scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;panel.add_child(scroll)
 	var column:=VBoxContainer.new();column.size_flags_horizontal=Control.SIZE_EXPAND_FILL;column.add_theme_constant_override("separation",8);scroll.add_child(column)

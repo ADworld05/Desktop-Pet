@@ -54,9 +54,9 @@ static HWND compact_window(int64_t request,int allow_full) {
     WCHAR title[80]={0};GetWindowTextW(window,title,80);
     if (!IsWindow(window) || pid!=GetCurrentProcessId() || thread!=GetCurrentThreadId() ||
         GetAncestor(window,GA_ROOT)!=window ||
-        (wcscmp(title,L"Desktop Fox — Compact Chat") &&
-         (!(allow_full&1) || wcscmp(title,L"Desktop Fox — Chat")) &&
-         (!(allow_full&2) || wcscmp(title,L"Desktop Fox — Quick Menu")))) return NULL;
+        (wcscmp(title,L"Desktop Pet — Compact Chat") &&
+         (!(allow_full&1) || wcscmp(title,L"Desktop Pet — Chat")) &&
+         (!(allow_full&2) || wcscmp(title,L"Desktop Pet — Quick Menu")))) return NULL;
     return window;
 }
 static int64_t configure(int64_t request) {
@@ -64,7 +64,7 @@ static int64_t configure(int64_t request) {
     if (!window || (request&255)>100) return 0;
     int64_t status=1;
     WCHAR title[80]={0};GetWindowTextW(window,title,80);
-    if (!wcscmp(title,L"Desktop Fox — Compact Chat") || !wcscmp(title,L"Desktop Fox — Quick Menu")) {
+    if (!wcscmp(title,L"Desktop Pet — Compact Chat") || !wcscmp(title,L"Desktop Pet — Quick Menu")) {
     LONG_PTR style=GetWindowLongPtrW(window,GWL_EXSTYLE);
     SetWindowLongPtrW(window,GWL_EXSTYLE,(style|WS_EX_TOOLWINDOW)&~WS_EX_APPWINDOW);
     if ((GetWindowLongPtrW(window,GWL_EXSTYLE)&(WS_EX_TOOLWINDOW|WS_EX_APPWINDOW))==WS_EX_TOOLWINDOW) status|=32;
@@ -84,7 +84,7 @@ static int64_t configure(int64_t request) {
     // Prefer direct desktop blur for this transparent OpenGL popup. Windows can
     // decline or suppress it (power/accessibility/compositor policy).
     if (composition) {
-        int quick=!wcscmp(title,L"Desktop Fox — Quick Menu");
+        int quick=!wcscmp(title,L"Desktop Pet — Quick Menu");
         Accent accent={(request&255)>0?(quick?4:3):0,quick?2:0,quick?0x55fff4e8:0,0};
         CompositionData data={19,&accent,sizeof(accent)};
         if (composition(window,&data) && accent.state>0) status|=64;

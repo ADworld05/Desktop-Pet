@@ -40,7 +40,7 @@ func _ready() -> void:
 	pet = get_window()
 	_startup_trace("ready_entry")
 	pet.gui_embed_subwindows = false
-	pet.title = "Desktop Fox — T02 overlay"
+	pet.title = "Desktop Pet — T02 overlay"
 	pet.transparent_bg = true
 	pet.transparent = true
 	_startup_trace("transparent")
@@ -141,7 +141,7 @@ func _sphere(at: Vector3, extent: Vector3, color: Color) -> MeshInstance3D:
 
 func _create_panel() -> void:
 	panel = Window.new()
-	panel.title = "Desktop Fox — T02 controls"
+	panel.title = "Desktop Pet — T02 controls"
 	panel.size = Vector2i(440, 650)
 	panel.unresizable = true
 	panel.visible = false
@@ -241,7 +241,7 @@ func _create_tray() -> void:
 	menu = NativeMenu.create_menu()
 	for item in [["Show placeholder", "show"], ["Hide placeholder", "hide"], ["Chat / controls", "panel"], ["Restore input", "input"], ["Sleep / wake", "sleep"], ["Exit", "exit"]]:
 		NativeMenu.add_item(menu, item[0], _menu_action, Callable(), item[1])
-	tray_id = DisplayServer.create_status_indicator(ImageTexture.create_from_image(icon), "Desktop Fox T02 — right-click for recovery", _tray_pressed)
+	tray_id = DisplayServer.create_status_indicator(ImageTexture.create_from_image(icon), "Desktop Pet T02 — right-click for recovery", _tray_pressed)
 	if tray_id >= 0:
 		DisplayServer.status_indicator_set_menu(tray_id, menu)
 	pass_toggle.disabled = tray_id < 0
