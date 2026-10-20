@@ -4,11 +4,11 @@ Only assembles local inputs and runs the setup's extraction-only /verify mode.
 It never installs, opens the application, edits a user's registry, or downloads.
 """
 from pathlib import Path
-import hashlib,json,shutil,subprocess,zipfile
+import hashlib,json,shutil,subprocess,zipfile,tempfile
 
 def build_installer(root,app,version,godot,cc,windres,env,run):
     if not windres.is_file():raise SystemExit('Select an existing MinGW-w64 windres with --windres.')
-    work=root/'.build/Installer';project=work/'Project';bundle=work/'Bundle'
+    work=Path(tempfile.mkdtemp(prefix='installer-',dir=root/'.build'));project=work/'Project';bundle=work/'Bundle'
     bundle.mkdir(parents=True,exist_ok=True)
     shutil.copytree(root/'Installer/Source',project,dirs_exist_ok=True,ignore=shutil.ignore_patterns('.godot','payload.json','payload.zip','*.dll'))
     native=project/'native';native.mkdir(exist_ok=True)
@@ -40,4 +40,4 @@ def build_installer(root,app,version,godot,cc,windres,env,run):
     if tested.returncode or list(verify.iterdir()):raise SystemExit('Standalone setup /verify failed or left extracted files; inspect .build/Installer/VerifyTemp.')
     (work/'bundle.json').write_text(json.dumps({'release':version,'payload_files':len(files),'entries':[{'name':n,'bytes':(bundle/n).stat().st_size,'sha256':sha(bundle/n)} for n in names],'extraction_only_verify':'pass'},indent=2)+'\n',encoding='utf-8')
     print('Standalone setup extraction-only verification passed',flush=True)
-    return {'installer_built':True,'setup':str(setup),'setup_sha256':sha(setup),'setup_bytes':setup.stat().st_size,'setup_extract_verify':'pass','actual_install_tested':False}
+    return {'installer_built':True,'setup':str(setup),'setup_sha256':sha(setup),'setup_bytes':setup.stat().st_size,'setup_extract_verify':'pass','actual_install_tested':False,'installer_work':str(work)}

@@ -59,7 +59,7 @@ int wmain(int count,WCHAR **args) {
         if(SUCCEEDED(error))error=IShellLinkW_SetPath(link,target);
         if(SUCCEEDED(error))error=IShellLinkW_SetArguments(link,L"");
         if(SUCCEEDED(error))error=IShellLinkW_SetWorkingDirectory(link,working);
-        if(SUCCEEDED(error))error=IShellLinkW_SetDescription(link,L"Desktop Pet â€” local companion");
+        if(SUCCEEDED(error))error=IShellLinkW_SetDescription(link,L"Desktop Pet — local companion");
         if(SUCCEEDED(error))error=IShellLinkW_SetShowCmd(link,SW_SHOWNORMAL);
         if(SUCCEEDED(error))error=IPersistFile_Save(file,path,TRUE);
         if(SUCCEEDED(error))enabled=TRUE;
