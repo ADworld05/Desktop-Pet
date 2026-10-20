@@ -168,8 +168,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5278,
-      "sha256": "fa60d06cbe7114197f0094c299962dab78d18c4fbfbce3840e7eb05defa8ac26"
+      "bytes": 5400,
+      "sha256": "97991759792a599a12396ae22b70a487dc0e075c72640765a5b3c49d67dfbeb7"
     },
     {
       "path": "scripts/build_installer.py",
