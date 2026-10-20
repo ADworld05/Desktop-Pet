@@ -37,6 +37,13 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'Source checks failed' }
           python scripts/build_windows.py --godot "$env:DP_GODOT" --cc "$env:DP_CC" --templates "$env:DP_TEMPLATES" --installer
           if ($LASTEXITCODE -ne 0) { throw 'Build failed' }
+      - name: Run packaging and source/pack regressions
+        shell: pwsh
+        env:
+          DP_GODOT: ${{ inputs.godot }}
+        run: |
+          python scripts/run_tests.py --godot "$env:DP_GODOT"
+          if ($LASTEXITCODE -ne 0) { throw 'Regression checks failed' }
       - name: Retain unsigned review artifacts
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:

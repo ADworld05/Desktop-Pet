@@ -361,7 +361,7 @@ func _save_home() -> void:
 	var area := DisplayServer.screen_get_usable_rect(screen)
 	pet.position=Geometry.fit_position(pet.position,pet.size,area)
 	var error := home_store.save_local(pet.position,pet.size,area)
-	if error!=OK: push_error("Could not save fox home on G:; placement remains available until Exit.")
+	if error!=OK: push_error("Could not save the pet home position; placement remains available until Exit.")
 	else: home_save_count+=1
 
 func _abort_follow() -> void:
@@ -524,7 +524,7 @@ func _chat_open() -> bool:
 
 func _update_follow_setting(value: float, key: String) -> void:
 	cursor_follow.settings[key]=value
-	if cursor_follow.save_local()!=OK:push_error("Could not save follow controls on G:.")
+	if cursor_follow.save_local()!=OK:push_error("Could not save follow controls.")
 
 func _show_audio_controls() -> void:
 	await get_tree().process_frame
@@ -894,7 +894,7 @@ func _apply_envelope() -> void:
 		pet.mouse_passthrough_polygon = polygon
 
 func _save_activity() -> void:
-	if home_behavior.save_local()!=OK:push_error("Could not save home activity on G:.")
+	if home_behavior.save_local()!=OK:push_error("Could not save home activity.")
 
 func _user_posture(destination: String) -> void:
 	if chat_view:chat_view.cancel_approach("explicit posture")
@@ -1072,7 +1072,7 @@ func _desktop_acceptance() -> void:
 	panel.get_texture().get_image().save_png(OUT+"desktop_controls.png")
 	var passed:=checks.all(func(row):return row.passed)
 	var file=FileAccess.open(OUT+"desktop_checks.json",FileAccess.WRITE)
-	file.store_string(JSON.stringify({"passed":passed,"checks":checks,"tray_created":tray_id>=0,"limits":["In-process Windows actions; no physical mouse/taskbar/tray gestures or actual Windows DPI changes","T09 pointer classifier and T10 screen drag placement are not implemented","Camera follows world movement inside a fixed window; autonomous desktop movement is T11","No hardware FPS or iGPU benchmark"]},"\t"));file.close()
+	file.store_string(JSON.stringify({"passed":passed,"checks":checks,"tray_created":tray_id>=0,"limits":["In-process Windows actions; no physical mouse/taskbar/tray gestures or actual Windows DPI changes","Historical fixture; current pointer and follow behavior are tested separately","Camera follows world movement inside a fixed window; autonomous desktop movement is T11","No hardware FPS or iGPU benchmark"]},"\t"));file.close()
 	print("T08_DESKTOP_CHECKS ",checks.size()," PASS ",passed)
 	_quit(0 if passed else 1)
 

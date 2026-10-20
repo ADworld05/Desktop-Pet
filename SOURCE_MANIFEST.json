@@ -1,10 +1,10 @@
 {
-  "scope": "Reviewed Desktop Pet rc.7 source inputs; no generated binaries/cache/user data; hashes identify committed file bytes",
+  "scope": "Desktop Pet source inputs; excludes generated binaries/cache/user data; hashes identify committed file bytes",
   "files": [
     {
       "path": ".github/workflows/windows-review.yml",
-      "bytes": 1790,
-      "sha256": "87964f5c7d895f8498064c843f793479f790c01ef70353945ded3e32cf59d77b"
+      "bytes": 2068,
+      "sha256": "6ed5ee352293af37da42c57478d2f2bfb05542e6e5e379d75955154b9c1155ee"
     },
     {
       "path": ".gitignore",
@@ -18,13 +18,13 @@
     },
     {
       "path": "BUILDING.md",
-      "bytes": 4813,
-      "sha256": "45b33d2b455088cad670163b25e6338ba38b51d31fe6baaf2380051264c5a08c"
+      "bytes": 5963,
+      "sha256": "18b65ba79d46c1d7f2a1a3fdeb47f2224a9d0cfed989f82531cf0e83472f8607"
     },
     {
       "path": "CONTRIBUTING.md",
-      "bytes": 1081,
-      "sha256": "2da76c7e7cf4916a2fb213a3dd1070fa36c6f79904407650e41dc65b431b8eb2"
+      "bytes": 1111,
+      "sha256": "c2375f3b247416735b5ea5726d2b1dde5ec02fb2ca6abd2efc3ea3e88b29923d"
     },
     {
       "path": "docs/images/compact-chat.png",
@@ -62,9 +62,14 @@
       "sha256": "366610582da08e0c9dedac9854317027ae81d4d48d39efb72c53e6b975ca8011"
     },
     {
+      "path": "docs/USAGE.md",
+      "bytes": 12343,
+      "sha256": "5bbf963915649012dbfdf281427df2d1f313f791d35582d60efe8a74b57ed124"
+    },
+    {
       "path": "Installer/Source/export_presets.cfg",
       "bytes": 716,
-      "sha256": "928225fe00f3e801effb2ad66a17fd81fed2ef12272b526de6dd5c4d4320e775"
+      "sha256": "ee4f58ff7c98ccaefd7358b5b101507618ba07afe3265bd2bfb6ed2626a7f5e0"
     },
     {
       "path": "Installer/Source/InstallCore.gd",
@@ -163,18 +168,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 21207,
-      "sha256": "dfd7f1d3ea718fb767b7c2ffe902e229d430f13118bccc1f8d3cdffe622a2c55"
+      "bytes": 5278,
+      "sha256": "fa60d06cbe7114197f0094c299962dab78d18c4fbfbce3840e7eb05defa8ac26"
     },
     {
       "path": "scripts/build_installer.py",
-      "bytes": 3848,
-      "sha256": "2acc188c412f377ee5ea837ee7254dbf26f049b06065dc0719111c16b9aa1c23"
+      "bytes": 3922,
+      "sha256": "d52e06cb683ca4f6747baa8237177d4ce0d5027cfa15083c026404ca490e1c6b"
     },
     {
       "path": "scripts/build_windows.py",
-      "bytes": 5921,
-      "sha256": "6cc1024111b01a2a105a6d170409f50269f18227612b965e239f3fc7e5a06b46"
+      "bytes": 9427,
+      "sha256": "45322dd33f0738777eaa0b8196edc1ecafceb1eeabf354e0a820d47bb9f39c30"
     },
     {
       "path": "scripts/check_source.py",
@@ -182,9 +187,14 @@
       "sha256": "5b8a1f6c0e1ac2cd5a6b866384fa1316f62c6fd72758497fb5c1862fdff134a8"
     },
     {
+      "path": "scripts/run_tests.py",
+      "bytes": 3962,
+      "sha256": "347dafd1141a5a333b81c7f3660301a6f815137912e2b935a08aa5a3ce6e13d3"
+    },
+    {
       "path": "SECURITY.md",
-      "bytes": 763,
-      "sha256": "39161a2256788b6e80c088f39658504a8cf282446703b503282da655b5a3a729"
+      "bytes": 1149,
+      "sha256": "aaf78fe1344f835dae5bebea4bb5c3df31852f2fe0ba86729c42388da3e39c2f"
     },
     {
       "path": "Source/Blender/README.md",
@@ -194,7 +204,7 @@
     {
       "path": "Source/Godot/export_presets.cfg",
       "bytes": 728,
-      "sha256": "23e6f1953d844fb349eac5bae12413ed8502f1c799986f80da403d8a17ed22b7"
+      "sha256": "49565d9cdf4f322b5acdac89177f8c1756a354c5e5cdfc9c004a30492390ddb4"
     },
     {
       "path": "Source/Godot/native/fox_chat_window.gdextension",
@@ -418,8 +428,8 @@
     },
     {
       "path": "Source/Godot/scripts/actions/FoxPermissionControls.gd",
-      "bytes": 11188,
-      "sha256": "49f2e86a1059654d42cf90bf3bca68d61e5be717b717235eeb041cc72de7663b"
+      "bytes": 11172,
+      "sha256": "b6b8f3ca40b8d5451c06a412b2e2fa1f43081f895786cf0b3fbd6fe6588b075c"
     },
     {
       "path": "Source/Godot/scripts/actions/FoxPermissionControls.gd.uid",
@@ -558,8 +568,8 @@
     },
     {
       "path": "Source/Godot/scripts/audio/FoxAudioControls.gd",
-      "bytes": 2264,
-      "sha256": "cde0465abb271ff861205e5909de64bb38452b0277d7b42a9cf2d250ab4cd82f"
+      "bytes": 2258,
+      "sha256": "7c1d3350e24820fc91888fa6f7040c97582e572714abfc0f6fafbf44ad014561"
     },
     {
       "path": "Source/Godot/scripts/audio/FoxAudioControls.gd.uid",
@@ -748,8 +758,8 @@
     },
     {
       "path": "Source/Godot/scripts/chat/FoxMockProvider.gd",
-      "bytes": 2922,
-      "sha256": "9e181343d7824c6f62f088a9bd0d58bf8f9da32802c97e4c08f995253c3e71ab"
+      "bytes": 2936,
+      "sha256": "6227e434eca8ec71f5c4be18b2d967da9d01bea6d258aa2f160b00df4de9926e"
     },
     {
       "path": "Source/Godot/scripts/chat/FoxMockProvider.gd.uid",
@@ -979,7 +989,7 @@
     {
       "path": "Source/Godot/scripts/platform/DesktopFoxOverlay.gd",
       "bytes": 66103,
-      "sha256": "82d36266d473ebf358c08d4e507a4c18a0cb1d3451bd38485959823c6809d9a5"
+      "sha256": "64044b08576fd29f06680d0b5be7adf84aff82d6d7120bac7b4c38851e91ac5d"
     },
     {
       "path": "Source/Godot/scripts/platform/DesktopFoxOverlay.gd.uid",
@@ -1038,8 +1048,8 @@
     },
     {
       "path": "Source/Godot/scripts/platform/FoxStartup.gd",
-      "bytes": 1018,
-      "sha256": "8b93b42dced9aecaf39be93ccd7334ffe1782ef6456db3a42cd84e1065d139ab"
+      "bytes": 1405,
+      "sha256": "b176e195d934b6cd5b8224bc4ae3854710679ee6639150e1a81984bdd097b5d2"
     },
     {
       "path": "Source/Godot/scripts/platform/FoxStartup.gd.uid",
@@ -1148,8 +1158,8 @@
     },
     {
       "path": "Source/Native/fox_install_shortcuts.c",
-      "bytes": 4759,
-      "sha256": "e7fddf391a0bbc91944309409f8b25523f315cefc228e322c8472b44e255cabc"
+      "bytes": 4754,
+      "sha256": "860c1cb242cbf3d422d62c3b4425e7a667d17c244d9d84102259e13e03f5387b"
     },
     {
       "path": "Source/Native/fox_notepad_trust.inc",
@@ -1184,12 +1194,12 @@
     {
       "path": "Source/Native/fox_setup_bootstrap.manifest",
       "bytes": 513,
-      "sha256": "a25842fe246fd6f573461192359be89332ab4765f97f0de9b173b5dd96bb1291"
+      "sha256": "ce390ed895d3dead59f29060256dc32706f6f6d6e0e0d37afa931e191f94b953"
     },
     {
       "path": "Source/Native/fox_setup_bootstrap.rc",
       "bytes": 581,
-      "sha256": "e4eaaade25b242aa13011c43cf574cf820e79e76bbdfad6f5698aca75ea94aa6"
+      "sha256": "463bee763a68688f9052009e3ad14ce7742162eea556fd85664457f0f248f6b5"
     },
     {
       "path": "Source/Native/fox_setup_files.h",
@@ -1199,7 +1209,7 @@
     {
       "path": "Source/Native/fox_setup_maintenance.h",
       "bytes": 3819,
-      "sha256": "676772df5da581721c572214afea101b655bf17f078ecbdbf217c33ab85e434f"
+      "sha256": "c4cd649528edc7ffb96f61f7d35adb828448c6beea121c8f09a075b2999fb18d"
     },
     {
       "path": "Source/Native/fox_window.c",
@@ -1220,6 +1230,21 @@
       "path": "Source/Windows/README.md",
       "bytes": 133,
       "sha256": "88673e43b80a5506172a9453414fda14701056eeb0150c685c7b108fcf1cf9d6"
+    },
+    {
+      "path": "tests/regression.gd",
+      "bytes": 10605,
+      "sha256": "6f4d3b6e08a11ecc1720410c0db6de36b361d12cfcff48a02473865573d33948"
+    },
+    {
+      "path": "tests/taskbar.gd",
+      "bytes": 3498,
+      "sha256": "c27135ef1240ac4e14cd32a7da4cd0d7daef2ce1faa6552613275af3d1d5fb91"
+    },
+    {
+      "path": "tests/test_packaging.py",
+      "bytes": 3717,
+      "sha256": "af5bcb8360b346e52bd7546cbfa40102e89a79cc45801828e3bf7693ddeed072"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",

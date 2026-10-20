@@ -1,0 +1,50 @@
+extends SceneTree
+const Prefs=preload("res://scripts/settings/FoxPreferences.gd")
+const Atomic=preload("res://scripts/settings/FoxAtomicJson.gd")
+const Paths=preload("res://scripts/Paths.gd")
+var checks:Array=[]
+func check(label:String,ok:bool)->void:
+	checks.append({"check":label,"pass":ok})
+	if not ok:push_error(label)
+func _initialize()->void:run.call_deferred()
+func run()->void:
+	assert(OS.get_environment("APPDATA").contains("DesktopPetTests") or OS.get_environment("APPDATA").replace("\\","/").contains("DesktopPetTests"))
+	assert(Paths.prepare_runtime()==OK)
+	check("Fresh preferences hide the pet from the taskbar",not Prefs.DEFAULTS.taskbar)
+	var file:=Paths.directory("cache").path_join("taskbar-policy-fixture.json")
+	var old:Dictionary=Prefs.DEFAULTS.duplicate();old.erase("taskbar_policy_version");old.taskbar=true;old.pet_name="Custom Pet";old.topmost=false
+	assert(Atomic.write_local(file,old)==OK)
+	var prefs:=Prefs.new();prefs.load_local(file)
+	check("Legacy taskbar true migrates to hidden",not prefs.values.taskbar)
+	check("Migration keeps other user preferences",prefs.values.pet_name=="Custom Pet" and not prefs.values.topmost)
+	check("Migration records the one-time policy marker",prefs.values.taskbar_policy_version==1)
+	assert(prefs.save_local(file)==OK)
+	var reload:=Prefs.new();reload.load_local(file)
+	check("Saved migrated preference stays hidden on restart",not reload.values.taskbar)
+	reload.values.taskbar=true;assert(reload.save_local(file)==OK)
+	var opted:=Prefs.new();opted.load_local(file)
+	check("Later explicit taskbar opt-in survives restart",opted.values.taskbar)
+	assert(Atomic.write_local(Prefs.PATH,old)==OK)
+	var app:Node=load("res://scenes/DesktopFox.tscn").instantiate();root.add_child(app);app.set_process(false);app.set_process_input(false)
+	await create_timer(1).timeout
+	app.panel.hide();app.chat_view.hide_all()
+	var state:int=FoxWindowBridge.get_window_state()
+	check("Actual pet has TOOLWINDOW and no APPWINDOW",state>=0 and (state&2)!=0 and (state&1)==0)
+	check("Pet remains visible and does not activate",(state&8)!=0 and (state&4)!=0)
+	check("System tray indicator remains available",app.tray_id>=0)
+	app._set_pass_through(true);state=FoxWindowBridge.get_window_state()
+	check("Click-through preserves the hidden taskbar state",(state&384)==384 and (state&2)!=0 and (state&1)==0)
+	app._set_pass_through(false)
+	app._hide_pet();await process_frame;app._show_pet();await process_frame
+	state=FoxWindowBridge.get_window_state()
+	check("Hide/show restores visible pet without taskbar entry",(state&8)!=0 and (state&2)!=0 and (state&1)==0)
+	app.chat_view.open_full_chat();await process_frame
+	var chat:int=FoxChatWindowBridge.window_state(app.chat_view.window.get_window_id())
+	check("Chat retains normal caption and minimize controls",(chat&1)!=0 and (chat&16)!=0 and (chat&32)!=0 and (chat&128)!=0)
+	check("Opening Chat does not add the pet to the taskbar",(FoxWindowBridge.get_window_state()&1)==0)
+	app.open_panel();await process_frame
+	check("Settings retains its native title bar and minimize",not app.panel.borderless and not app.panel.minimize_disabled)
+	var out:=FileAccess.open(OS.get_environment("APPDATA").path_join("taskbar_checks.json"),FileAccess.WRITE);out.store_string(JSON.stringify(checks,"  "));out.close()
+	var failures:=checks.filter(func(row):return not row["pass"]).size()
+	print("TASKBAR_CHECKS ",checks.size()," failures ",failures)
+	app._quit(0 if failures==0 else 1)

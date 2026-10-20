@@ -25,4 +25,4 @@ static func build(audio:Node) -> VBoxContainer:
 
 static func set_value(audio:Node,key:String,value:Variant) -> void:
 	audio.update_setting(key,value)
-	if audio.settings.save_local()!=OK:push_error("Could not save sound preferences on G:.")
+	if audio.settings.save_local()!=OK:push_error("Could not save sound preferences.")

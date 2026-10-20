@@ -58,7 +58,7 @@ func initialize(app_owned_config: String = "", app_owned_audit: String = "") -> 
 	picker = FileDialog.new(); preload("res://scripts/FoxFileDialogs.gd").configure(picker); picker.access = FileDialog.ACCESS_FILESYSTEM; picker.file_mode = FileDialog.FILE_MODE_OPEN_DIR; picker.title = "Choose a permitted folder"; add_child(picker)
 	picker.dir_selected.connect(func(path: String): path_input.text = path; _add("root"))
 	action_review = Review.new(); add_child(action_review); action_review.initialize(service)
-	_build_audit(); _refresh(); status.text = "Loading permissions on the background workerâ€¦"
+	_build_audit(); _refresh(); status.text = "Loading permissions on the background worker…"
 	service.submit_from_ui("load")
 
 func _build_audit() -> void:
@@ -105,12 +105,12 @@ func _add(kind: String) -> void:
 	var proposal: Dictionary = staged.duplicate(true)
 	proposal[area].append({"id": kind + "_" + Crypto.new().generate_random_bytes(6).hex_encode(), "path": path_input.text.strip_edges()})
 	_validation_pending = proposal; _validation_input = path_input.text
-	service.submit_from_ui("validate", proposal); status.text = "Validating the selected path on the background workerâ€¦"
+	service.submit_from_ui("validate", proposal); status.text = "Validating the selected path on the background worker…"
 
 func _action(action: String) -> void:
 	if service.busy(): status.text = "A permission check is finishing. Try again shortly."; return
 	if action == "review": action_review.popup_centered(); return
-	if action == "audit": audit_text.text = "Loadingâ€¦"; audit_window.popup_centered(); service.submit_from_ui("audit"); return
+	if action == "audit": audit_text.text = "Loading…"; audit_window.popup_centered(); service.submit_from_ui("audit"); return
 	if action == "remove":
 		for pair in [[paths, "roots"], [applications, "apps"]]:
 			var selected: PackedInt32Array = pair[0].get_selected_items()
@@ -126,4 +126,4 @@ func _action(action: String) -> void:
 func _save() -> void:
 	if _pending.is_empty(): return
 	if not service.submit_from_ui("save", _pending): status.text = "A permission check is still finishing. Apply again shortly."; return
-	_pending.clear(); status.text = "Saving your confirmed selectionsâ€¦"
+	_pending.clear(); status.text = "Saving your confirmed selections…"
