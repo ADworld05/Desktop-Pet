@@ -8,11 +8,11 @@ The pet watches your cursor, follows when you hold and move away, and rests when
 
 Created by **Abir Dutta** ([ADworld05](https://github.com/ADworld05)). Original project code is MIT licensed. The fox model is by **pxltiger**, with separate attribution and license notices.
 
-**Status:** Windows x64 release candidate **1.0.0-rc.8**. Source is available in this repository. Release downloads have not been published yet. Binaries are unsigned; native glass effects depend on Windows and graphics support.
+**Status:** Windows x64 release candidate **1.0.0-rc.8**. Source is available in this repository. [Release downloads](https://github.com/ADworld05/Desktop-Pet/releases/tag/v1.0.0-rc.8) are available to repository viewers; the repository is currently private. Binaries are unsigned; native glass effects depend on Windows and graphics support.
 
 ## Get started
 
-When available, download the installer or portable ZIP from [Releases](https://github.com/ADworld05/Desktop-Pet/releases).
+Download the installer or portable ZIP from [the rc.8 release](https://github.com/ADworld05/Desktop-Pet/releases/tag/v1.0.0-rc.8).
 
 - **Installer:** exit any running pet through its tray menu, open `DesktopPet_Setup.exe`, choose **Install / Update**, then **Open installed pet**.
 - **Portable:** extract the entire `DesktopPet_Portable.zip` and run `DesktopPet.exe` inside the extracted folder. Keep its supplied files together.
