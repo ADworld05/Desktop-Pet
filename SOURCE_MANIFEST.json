@@ -168,8 +168,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5400,
-      "sha256": "97991759792a599a12396ae22b70a487dc0e075c72640765a5b3c49d67dfbeb7"
+      "bytes": 5309,
+      "sha256": "7ccc07226808c1dd367369f85c95c2c6cc2bb0e413af36ed1e2722de10f97368"
     },
     {
       "path": "scripts/build_installer.py",
@@ -193,8 +193,8 @@
     },
     {
       "path": "SECURITY.md",
-      "bytes": 1149,
-      "sha256": "aaf78fe1344f835dae5bebea4bb5c3df31852f2fe0ba86729c42388da3e39c2f"
+      "bytes": 995,
+      "sha256": "e23e0701a7f8472ddd6cf57ccb6af94adda5338edfa7f669d5ce10646f3b97c1"
     },
     {
       "path": "Source/Blender/README.md",

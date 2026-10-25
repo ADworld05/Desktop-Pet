@@ -8,7 +8,7 @@ The pet watches your cursor, follows when you hold and move away, and rests when
 
 Created by **Abir Dutta** ([ADworld05](https://github.com/ADworld05)). Original project code is MIT licensed. The fox model is by **pxltiger**, with separate attribution and license notices.
 
-**Status:** Windows x64 release candidate **1.0.0-rc.8**. Source is available in this repository. [Release downloads](https://github.com/ADworld05/Desktop-Pet/releases/tag/v1.0.0-rc.8) are available to repository viewers; the repository is currently private. Binaries are unsigned; native glass effects depend on Windows and graphics support.
+**Status:** Windows x64 release candidate **1.0.0-rc.8**. Source and [release downloads](https://github.com/ADworld05/Desktop-Pet/releases/tag/v1.0.0-rc.8) are public. Binaries are unsigned; native glass effects depend on Windows and graphics support.
 
 ## Get started
 

@@ -1,11 +1,11 @@
 # Reporting a vulnerability
 
-The chosen reporting route is [GitHub private vulnerability reporting](https://github.com/ADworld05/Desktop-Pet/security/advisories/new).
+Use [GitHub private vulnerability reporting](https://github.com/ADworld05/Desktop-Pet/security/advisories/new) for confidential security reports. If GitHub does not offer the private reporting form for this repository, do not include sensitive details in a public issue. Open a non-sensitive issue asking the maintainer for a private contact route instead.
 
-**Setup pending:** this repository is currently private. GitHub documents private vulnerability reporting for public repositories. The maintainer must enable and verify the private reporting form when authorizing public visibility. Until that setup is complete, this link is not an available reporting service; do not put exploit details, credentials or personal data in a public issue.
+Include the affected version, impact and a minimal synthetic reproduction. Remove private paths, chat history, memory, credentials and personal data. No response-time guarantee is offered.
 
-Once reporting is enabled, use that form with the affected version, impact and a minimal synthetic reproduction. Remove private paths, chat history and memory. Ordinary non-sensitive bugs can use Issues. No response-time guarantee is offered.
+Use [GitHub Issues](https://github.com/ADworld05/Desktop-Pet/issues) for ordinary, non-sensitive bugs.
 
-The app uses local inference and permission-scoped Windows actions. Signing identifies a publisher; it is not a security certification.
+Desktop Pet uses local inference and permission-scoped Windows actions. Code signing identifies a publisher; it is not a security certification.
 
-Maintainer instructions: [configure private vulnerability reporting](https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/configure-vulnerability-reporting/configure-for-a-repository).
+Maintainer: confirm private vulnerability reporting is enabled in the repository's Settings → Code security and analysis, and verify that the form remains available.
